@@ -3,6 +3,9 @@
 import AboutScrollyCard from "@/components/about-scrolly-card";
 import CertificationsCarousel from "@/components/certifications-carousel";
 import TextReveal from "@/components/text-reveal";
+import { ShutterTitle } from "@/components/ui/shutter-title";
+import type { Certification } from "@/lib/content-types";
+import certificationData from "../../../content/certifications.json";
 
 /* ─── Warm cream & ink palette for noise background ─── */
 const C = {
@@ -20,7 +23,7 @@ export default function AboutPage() {
   return (
     <div className="surface-light" style={{ minHeight: "100vh" }}>
       <section className="page-start" style={{ paddingBottom: 80 }}>
-        <TextReveal>
+        <div>
           <div className="about-hero__intro">
             <div className="about-hero__photo">
               <img
@@ -29,12 +32,12 @@ export default function AboutPage() {
               />
             </div>
             <h1 className="about-hero__title type-display">
-              Hey — I&apos;m
+              <ShutterTitle text="Hey — I’m" />
               <br />
-              Euloge
+              <ShutterTitle text="Euloge" />
             </h1>
           </div>
-        </TextReveal>
+        </div>
 
         <TextReveal delay={0.1}>
           <div style={{ height: 1, background: C.border, maxWidth: 980, margin: "36px auto 32px" }} />
@@ -117,7 +120,7 @@ export default function AboutPage() {
           PROFESSIONAL CERTIFICATIONS
           Horizontal scrollable cards + modal verification
       ════════════════════════════════════════ */}
-      <CertificationsCarousel />
+      <CertificationsCarousel certifications={certificationData as Certification[]} />
     </div>
   );
 }
