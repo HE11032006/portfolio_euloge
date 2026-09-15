@@ -216,7 +216,7 @@ export default function ResumePage() {
                   <h3 className="text-xs font-semibold text-white">Awwwards</h3>
                 </div>
                 <div className="md:col-span-6">
-                  <p className="text-xs text-neutral-400 font-normal">Honorable Mention — W. Honors</p>
+                  <p className="text-xs text-neutral-400 font-normal">Honorable Mention, W. Honors</p>
                 </div>
               </div>
             </section>
