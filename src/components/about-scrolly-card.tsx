@@ -97,6 +97,7 @@ export default function AboutScrollyCard() {
       <div className="about-pin__sticky">
         <motion.div
           className="about-pin__card"
+          data-header-theme="dark"
           style={{
             top: inset,
             right: inset,

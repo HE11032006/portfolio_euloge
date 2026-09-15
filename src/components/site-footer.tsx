@@ -106,11 +106,11 @@ export default function SiteFooter() {
           className="hover:scale-105 hover:opacity-90"
         >
           <Image
-            src="/logo-footer.svg"
-            alt=""
-            width={76}
-            height={72}
-            style={{ width: 76, height: "auto" }}
+            src="/logo-clair.png"
+            alt="Monogramme HE"
+            width={600}
+            height={473}
+            style={{ width: 92, height: "auto" }}
           />
         </Link>
 
