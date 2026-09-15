@@ -149,59 +149,6 @@ export default function HomePage() {
               </span>
             </h1>
           </motion.div>
-
-          {/* Hero visual cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 h-[420px] sm:h-[500px] md:h-[560px]">
-              {/* Left card — 113 Spring mockup */}
-              <div className="md:col-span-7 bg-[#df8a3c] rounded-xl overflow-hidden relative group flex items-center justify-center p-6 sm:p-10 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#b6531c] via-[#e28328] to-[#f5ab4d] opacity-95" />
-                <div className="relative z-10 w-full max-w-lg bg-[#0e0f11] rounded-t-lg border-t-4 border-x-4 border-[#2b2926] shadow-2xl overflow-hidden aspect-[16/10] flex flex-col transform group-hover:scale-[1.01] transition-transform duration-500">
-                  <div className="bg-[#191919] px-4 py-2 flex items-center justify-between text-[9px] text-neutral-400 border-b border-neutral-800">
-                    <div className="flex space-x-3 text-neutral-300">
-                      <span>Products</span><span>Experiences</span><span>Events</span>
-                    </div>
-                    <span className="font-medium tracking-wider text-neutral-200">113 SPRING</span>
-                    <div className="flex space-x-2"><span>🔍</span><span>🛒</span></div>
-                  </div>
-                  <div className="flex-1 bg-gradient-to-b from-[#b24d08] via-[#e47614] to-[#632402] relative p-6 flex flex-col justify-between text-white overflow-hidden">
-                    <div className="absolute right-12 top-4 w-44 h-44 rounded-full bg-[#fde8a0] blur-[1px] shadow-[0_0_80px_#fca311]" />
-                    <div className="relative z-10 mt-6 max-w-[240px]">
-                      <p className="text-[8px] uppercase tracking-widest text-amber-200 mb-1">ON NOW</p>
-                      <h2 className="text-xl sm:text-2xl font-serif font-light leading-snug text-white">
-                        The<br />Energy Exchange
-                      </h2>
-                      <p className="text-[9px] text-amber-100/80 mt-2 leading-relaxed font-light">
-                        An exploration of energy not as a metric for output, but as a shared resource.
-                      </p>
-                      <span className="inline-block mt-3 px-2.5 py-1 text-[8px] bg-white/20 backdrop-blur rounded-full border border-white/30 text-white hover:bg-white/30 transition">
-                        Discover the Exhibition
-                      </span>
-                    </div>
-                    <div className="relative z-10 text-[10px] text-neutral-300 font-light border-t border-white/20 pt-2 flex justify-between">
-                      <span>Longevity is not just</span><span>01/04</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
-              </div>
-
-              {/* Right card — iridescent */}
-              <div className="md:col-span-5 bg-black rounded-xl overflow-hidden relative shadow-2xl flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-iridescent scale-125 transform rotate-6 mix-blend-screen opacity-90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d] via-transparent to-[#0d0d0d]/40" />
-                <svg className="absolute inset-0 w-full h-full object-cover opacity-80" viewBox="0 0 500 700" preserveAspectRatio="none">
-                  <path d="M 0,200 C 150,450 350,100 500,350 L 500,700 L 0,700 Z" fill="#0341c8" opacity="0.6" />
-                  <path d="M 50,0 C 200,300 350,550 500,600 L 500,0 Z" fill="#e85d04" opacity="0.5" />
-                  <path d="M 0,350 C 220,180 280,620 500,450 L 500,700 L 0,700 Z" fill="#00b4d8" opacity="0.4" />
-                </svg>
-              </div>
-            </div>
-          </motion.div>
         </section>
 
         {/* ── Client Work ── */}
