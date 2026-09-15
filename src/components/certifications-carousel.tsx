@@ -4,7 +4,7 @@ import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react"
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, BadgeCheck, Eye } from "lucide-react";
-import { CERTIFICATIONS, type Certification } from "@/data/certifications";
+import type { Certification } from "@/lib/content-types";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import TextReveal from "@/components/text-reveal";
 
@@ -27,21 +27,19 @@ function CertModal({
         <button type="button" className="cert-modal__close" onClick={onClose} aria-label="Fermer">
           ×
         </button>
-        <img src={cert.image} alt={`Certificat ${cert.title}`} />
+        {cert.certificateImage && <img src={cert.certificateImage} alt={`Certificat ${cert.title}`} />}
         <div className="cert-modal__meta">
-          <p>{cert.issuer}</p>
+          {cert.issuer && <p>{cert.issuer}</p>}
           <h3>{cert.title}</h3>
-          <span>Obtenu en {cert.obtainedAt}</span>
-          <a href={cert.verifyUrl} target="_blank" rel="noreferrer">
-            Vérifier la certification ↗
-          </a>
+          {cert.obtainedAt && <span>Obtenu en {cert.obtainedAt}</span>}
+          {cert.verifyUrl && <a href={cert.verifyUrl} target="_blank" rel="noreferrer">Vérifier la certification ↗</a>}
         </div>
       </motion.div>
     </motion.div>
   );
 }
 
-export default function CertificationsCarousel() {
+export default function CertificationsCarousel({ certifications }: { certifications: Certification[] }) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef({ pointerId: -1, startX: 0, scrollLeft: 0, moved: false });
   const suppressClickRef = useRef(false);
@@ -103,6 +101,10 @@ export default function CertificationsCarousel() {
         </TextReveal>
       </header>
 
+      {certifications.length === 0 ? (
+        <p className="content-empty">Aucune certification publiée pour le moment.</p>
+      ) : (
+        <>
       <div
         ref={scrollRef}
         className={`certs__track${isDragging ? " is-dragging" : ""}`}
@@ -117,15 +119,15 @@ export default function CertificationsCarousel() {
           suppressClickRef.current = false;
         }}
       >
-        {CERTIFICATIONS.map((cert, index) => {
+        {certifications.map((cert, index) => {
           const dark = Boolean(cert.featured) || index === 0;
           return (
             <article key={cert.id} className={`certs__card${dark ? " is-dark" : ""}`}>
               <div className="certs__card-top">
-                <span className="certs__badge" aria-hidden="true">
-                  {cert.issuer.slice(0, 1)}
+                <span className="certs__badge">
+                  <img src={cert.logo} alt={`Logo ${cert.title}`} />
                 </span>
-                <em>{cert.tag}</em>
+                <em>{cert.kind === "specialization" ? "Spécialisation" : "Certification"}</em>
               </div>
               <h3>{cert.title}</h3>
               <p>{cert.subtitle}</p>
@@ -135,6 +137,7 @@ export default function CertificationsCarousel() {
                 ))}
               </ul>
               <div className="certs__card-actions">
+                {cert.certificateImage && (
                 <HoverBorderGradient
                   as="button"
                   onClick={() => setOpen(cert)}
@@ -146,6 +149,8 @@ export default function CertificationsCarousel() {
                   <Eye aria-hidden="true" />
                   <span>Voir le certificat</span>
                 </HoverBorderGradient>
+                )}
+                {cert.verifyUrl && (
                 <a
                   className="certs__action-link"
                   href={cert.verifyUrl}
@@ -163,6 +168,7 @@ export default function CertificationsCarousel() {
                     <span>Vérifier</span>
                   </HoverBorderGradient>
                 </a>
+                )}
               </div>
             </article>
           );
@@ -220,6 +226,8 @@ export default function CertificationsCarousel() {
           </HoverBorderGradient>
         </div>
       </div>
+        </>
+      )}
 
       <AnimatePresence>
         {open && <CertModal cert={open} onClose={() => setOpen(null)} />}
