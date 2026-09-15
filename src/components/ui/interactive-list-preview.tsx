@@ -29,6 +29,8 @@ export interface InteractiveListPreviewProps {
   lerp?: number;
   /** Background color of the list surface. */
   bgColor?: string;
+  /** Color treatment for the list and active row. */
+  theme?: "dark" | "light";
   className?: string;
 }
 
@@ -79,6 +81,7 @@ export default function InteractiveListPreview({
   smoothness = DEFAULT_SMOOTHNESS,
   lerp = DEFAULT_LERP,
   bgColor = "#171717",
+  theme = "dark",
   className = "",
 }: InteractiveListPreviewProps) {
   const router = useRouter();
@@ -103,6 +106,7 @@ export default function InteractiveListPreview({
   const safeDuration = clampNumber(duration, 0.1, 2, DEFAULT_DURATION);
   const safeSmoothness = clampNumber(smoothness, 0.05, 1.5, DEFAULT_SMOOTHNESS);
   const safeLerp = clampNumber(lerp, 0.02, 1, DEFAULT_LERP);
+  const isLight = theme === "light";
 
   useEffect(() => {
     const mq = window.matchMedia?.("(prefers-reduced-motion: reduce)");
@@ -218,26 +222,34 @@ export default function InteractiveListPreview({
 
     if (tds.length >= 3) {
       gsap.to(tds[0], {
-        color: isActive ? "#000000" : "#faf9f8",
+        color: isActive
+          ? (isLight ? "#f2f0ec" : "#000000")
+          : (isLight ? "#171717" : "#faf9f8"),
         duration: safeSmoothness,
         ease: "power2.out",
         overwrite: "auto",
       });
       gsap.to(tds[1], {
-        color: isActive ? "#262626" : "#8e8b87",
+        color: isActive
+          ? (isLight ? "#dedbd5" : "#262626")
+          : (isLight ? "#5c5852" : "#8e8b87"),
         duration: safeSmoothness,
         ease: "power2.out",
         overwrite: "auto",
       });
       gsap.to(tds[2], {
-        color: isActive ? "#333333" : "#6e6b67",
+        color: isActive
+          ? (isLight ? "#c8c4bd" : "#333333")
+          : (isLight ? "#77716a" : "#6e6b67"),
         duration: safeSmoothness,
         ease: "power2.out",
         overwrite: "auto",
       });
     } else {
       gsap.to(tds, {
-        color: isActive ? "#000000" : "#ffffff",
+        color: isActive
+          ? (isLight ? "#f2f0ec" : "#000000")
+          : (isLight ? "#171717" : "#ffffff"),
         duration: safeSmoothness,
         ease: "power2.out",
         overwrite: "auto",
@@ -280,7 +292,9 @@ export default function InteractiveListPreview({
       ...(reduceMotion
         ? { opacity: 0 }
         : { clipPath: IMAGE_HIDDEN_CLIP_PATH, opacity: 0 }),
-      duration: reduceMotion ? Math.min(safeSmoothness, 0.35) : safeDuration,
+      duration: reduceMotion
+        ? Math.min(safeSmoothness, 0.2)
+        : Math.min(safeDuration, 0.2),
       ease: reduceMotion ? "power2.out" : "power3.inOut",
       onComplete: () => {
         if (tweenGenerationRef.current[index] !== tweenGeneration) return;
@@ -402,11 +416,6 @@ export default function InteractiveListPreview({
 
     if (!imageElement) return;
 
-    if (gsap.isTweening(imageElement)) {
-      pendingLeaveRef.current[index] = true;
-      return;
-    }
-
     animateImageOut(index);
   };
 
@@ -455,20 +464,21 @@ export default function InteractiveListPreview({
       <div
         ref={containerRef}
         style={{ backgroundColor: bgColor }}
-        className={`relative w-full text-white hidden md:block ${className}`}
+        className={`relative w-full hidden md:block ${isLight ? "text-[#171717]" : "text-white"} ${className}`}
         onMouseMove={onMouseMove}
         onMouseLeave={onTableLeave}
       >
-        {/* White highlight bar — sits behind the table text */}
+        {/* Highlight bar — sits behind the table text */}
         <div
           ref={highlightRef}
-          className="pointer-events-none absolute inset-x-0 top-0 z-10 bg-white"
+          className="pointer-events-none absolute inset-x-0 top-0 z-10"
+          style={{ backgroundColor: isLight ? "#111111" : "#ffffff" }}
         />
 
-        {/* Floating image container — follows cursor, above everything */}
+        {/* Floating image container — follows cursor, below the fixed header */}
         <div
           ref={imageContainerRef}
-          className="pointer-events-none absolute z-50"
+          className="pointer-events-none absolute z-40"
           style={{
             top: 0,
             left: 0,
@@ -514,7 +524,7 @@ export default function InteractiveListPreview({
                   ref={(el) => {
                     rowRefs.current[index] = el;
                   }}
-                  className={`border-b border-[#211f1d] ${item.href ? "cursor-pointer" : ""}`}
+                  className={`border-b ${isLight ? "border-black/10" : "border-[#211f1d]"} ${item.href ? "cursor-pointer" : ""}`}
                   onClick={() => {
                     if (item.href) {
                       router.push(item.href);
@@ -526,21 +536,21 @@ export default function InteractiveListPreview({
                   onMouseLeave={() => onRowLeave(index)}
                 >
                   <td
-                    style={{ color: "#faf9f8" }}
+                    style={{ color: isLight ? "#171717" : "#faf9f8" }}
                     className="whitespace-nowrap px-3 md:px-5 py-5 md:py-6 text-base md:text-xl font-medium tracking-tight"
                   >
                     {item.client}
                   </td>
 
                   <td
-                    style={{ color: "#8e8b87" }}
+                    style={{ color: isLight ? "#5c5852" : "#8e8b87" }}
                     className="px-3 md:px-5 py-5 md:py-6 text-sm md:text-base font-normal truncate"
                   >
                     {item.services}
                   </td>
 
                   <td
-                    style={{ color: "#6e6b67" }}
+                    style={{ color: isLight ? "#77716a" : "#6e6b67" }}
                     className="whitespace-nowrap px-3 md:px-5 py-5 md:py-6 text-right text-sm md:text-base font-mono"
                   >
                     {item.year || item.platform}
@@ -556,27 +566,35 @@ export default function InteractiveListPreview({
         </div>
       </div>
 
-      <div style={{ backgroundColor: bgColor }} className={`w-full text-white block md:hidden ${className}`}>
+      <div
+        style={{ backgroundColor: bgColor }}
+        className={`w-full block md:hidden ${isLight ? "text-[#171717]" : "text-white"} ${className}`}
+      >
         {items.map((item: any, index: number) => {
           const card = (
-            <div key={`${item.client}-${index}`} className="flex items-center justify-between border-b border-[#211f1d] py-5 px-3 hover:bg-white/5 transition-colors gap-4">
+            <div
+              key={`${item.client}-${index}`}
+              className={`flex items-center justify-between border-b py-5 px-3 transition-colors gap-4 ${
+                isLight ? "border-black/10 hover:bg-black/[0.03]" : "border-[#211f1d] hover:bg-white/5"
+              }`}
+            >
               <div className="flex flex-col gap-1 min-w-0">
-                <p className="font-semibold text-base md:text-lg tracking-tight text-white">
+                <p className={`font-semibold text-base md:text-lg tracking-tight ${isLight ? "text-[#171717]" : "text-white"}`}>
                   {item.client}
                 </p>
 
-                <p className="text-sm text-[#8e8b87] line-clamp-1">
+                <p className={`text-sm line-clamp-1 ${isLight ? "text-[#5c5852]" : "text-[#8e8b87]"}`}>
                   {item.services}
                 </p>
               </div>
 
               <div className="flex items-center gap-3 shrink-0">
                 {item.year && (
-                  <span className="text-sm font-mono text-[#6e6b67]">
+                  <span className={`text-sm font-mono ${isLight ? "text-[#77716a]" : "text-[#6e6b67]"}`}>
                     {item.year}
                   </span>
                 )}
-                <div className="relative w-16 h-12 rounded-md overflow-hidden bg-neutral-900 border border-white/10">
+                <div className={`relative w-16 h-12 rounded-md overflow-hidden border ${isLight ? "bg-black/5 border-black/10" : "bg-neutral-900 border-white/10"}`}>
                   <img
                     src={item.img}
                     alt={item.client}
@@ -598,4 +616,4 @@ export default function InteractiveListPreview({
       </div>
     </>
   );
-}
+}
