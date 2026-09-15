@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { ShutterTitle } from "@/components/ui/shutter-title";
 
 function FadeIn({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   return (
@@ -30,7 +31,7 @@ export default function ResumePage() {
               <div className="md:col-span-6">
                 <p className="text-xs text-neutral-500 mb-4 font-medium tracking-wide">Resume</p>
                 <h1 className="text-3xl sm:text-4xl lg:text-[42px] leading-[1.18] font-normal text-neutral-100 tracking-[-0.02em] mb-7">
-                  Experience, education, and the{" "}
+                  <ShutterTitle text="Experience, education, and the " />
                   <span className="font-serif-italic text-[1.12em] text-neutral-100">details.</span>
                 </h1>
                 <div className="flex flex-wrap items-center gap-3 pt-1">
