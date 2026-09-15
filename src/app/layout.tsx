@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "HOUESSOU Euloge — Lead Architect & Product Technologist",
+  title: "Euloge HOUESSOU",
   description:
-    "Portfolio de HOUESSOU Euloge — Lead Architect & Product Technologist. Architectures distribuées, systèmes haute performance et leadership produit.",
+    "Portfolio de HOUESSOU Euloge, Lead Architect & Product Technologist. Architectures distribuées, systèmes haute performance et leadership produit.",
   keywords: [
     "HOUESSOU Euloge",
     "Lead Architect",
@@ -21,6 +21,11 @@ export const metadata: Metadata = {
     "FinTech",
   ],
   authors: [{ name: "HOUESSOU Euloge" }],
+  icons: {
+    icon: "/logo-sombre.png",
+    shortcut: "/logo-sombre.png",
+    apple: "/logo-sombre.png",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
