@@ -55,9 +55,9 @@ const categories = ["ALL", "CHAIN ABSTRACTION", "GETTING STARTED", "ORCHESTRATIO
 
 export default function WritingPage() {
   return (
-    <div className="bg-[#0c0b0a] text-[#ededeb] font-sans antialiased min-h-screen relative overflow-x-hidden selection:bg-[#d4ff33] selection:text-black">
+    <div className="surface-dark text-[#ededeb] font-sans antialiased min-h-screen relative overflow-x-hidden selection:bg-[#d4ff33] selection:text-black">
 
-      <div className="w-full px-6 sm:px-10 lg:px-16 pt-24 pb-24">
+      <div className="page-start w-full pb-24">
 
         {/* Page title */}
         <motion.div

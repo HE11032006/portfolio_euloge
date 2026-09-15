@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useInView } from "framer-motion";
-import InteractiveListPreview, { InteractiveListItem } from "@/components/ui/interactive-list-preview";
+import { motion, AnimatePresence } from "framer-motion";
+import InteractiveListPreview from "@/components/ui/interactive-list-preview";
 
 type Category = "All" | "Client" | "Lab" | "University";
 
@@ -38,27 +38,22 @@ const categories: Category[] = ["All", "Client", "Lab", "University"];
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState<Category>("All");
   const [view, setView] = useState<"list" | "grid">("list");
-  const listRef = useRef(null);
-  const inView = useInView(listRef, { once: true });
 
   const filtered = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <div className="bg-[#0e0c0a] text-[#eeecea] min-h-screen font-sans antialiased selection:bg-neutral-700 selection:text-white relative">
+    <div className="surface-light min-h-screen font-sans antialiased relative">
 
-      <div className="w-full px-6 md:px-12 lg:px-16 pt-24 pb-20">
+      <div className="page-start w-full pb-20">
 
         {/* Page title */}
         <motion.section
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          className="mb-12"
         >
-          <p className="text-[12px] text-[#73706d] tracking-wide mb-2 font-mono">Index / {projects.length}</p>
-          <h1 className="text-5xl md:text-6xl font-medium tracking-[-0.035em] text-[#faf9f8]">
-            Selected works
-          </h1>
+          <h1 className="type-display">Projects</h1>
         </motion.section>
 
         {/* Filters & View toggle */}
@@ -66,7 +61,7 @@ export default function WorkPage() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-col md:flex-row md:items-center justify-between pb-4 gap-4 border-b border-[#211f1d]"
+          className="flex flex-col md:flex-row md:items-center justify-between pb-4 gap-4 border-b border-black/10"
         >
           {/* Filter tabs */}
           <div className="flex items-center gap-2 text-xs">
@@ -76,8 +71,8 @@ export default function WorkPage() {
                 onClick={() => setActiveFilter(cat)}
                 className={`px-3.5 py-1.5 rounded-md text-[11px] transition-colors ${
                   activeFilter === cat
-                    ? "bg-white text-black font-medium shadow-sm"
-                    : "bg-[#1b1917] text-[#a39f9b] hover:text-white border border-[#2b2825]"
+                    ? "bg-[#111] text-[#f2f0ec] font-medium"
+                    : "bg-white/45 text-[#5c5852] hover:text-black border border-black/10"
                 }`}
               >
                 {cat}
@@ -90,7 +85,7 @@ export default function WorkPage() {
             <button
               onClick={() => setView("list")}
               className={`px-3.5 py-1.5 rounded-md text-[11px] transition-colors ${
-                view === "list" ? "bg-white text-black font-medium" : "text-[#7d7a76] hover:text-white"
+                view === "list" ? "bg-[#111] text-[#f2f0ec] font-medium" : "text-[#6a6762] hover:text-black"
               }`}
             >
               List
@@ -98,7 +93,7 @@ export default function WorkPage() {
             <button
               onClick={() => setView("grid")}
               className={`px-3.5 py-1.5 rounded-md text-[11px] transition-colors ${
-                view === "grid" ? "bg-white text-black font-medium" : "text-[#7d7a76] hover:text-white"
+                view === "grid" ? "bg-[#111] text-[#f2f0ec] font-medium" : "text-[#6a6762] hover:text-black"
               }`}
             >
               Grid
@@ -111,7 +106,6 @@ export default function WorkPage() {
           {view === "list" ? (
             <motion.section
               key={`list-${activeFilter}`}
-              ref={listRef}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -129,6 +123,7 @@ export default function WorkPage() {
                 }))}
                 bgColor="transparent"
                 imageSize={1}
+                theme="light"
               />
             </motion.section>
           ) : (
@@ -150,7 +145,7 @@ export default function WorkPage() {
                     transition={{ duration: 0.25, delay: i * 0.05 }}
                   >
                     <Link href={p.href} className="group block">
-                      <div className="aspect-[4/3] rounded-xl overflow-hidden bg-neutral-900 border border-[#211f1d] group-hover:border-neutral-700 transition">
+                      <div className="aspect-[4/3] rounded-xl overflow-hidden bg-black/5 border border-black/10 group-hover:border-black/30 transition">
                         <img
                           src={p.image}
                           alt={p.title}
@@ -158,10 +153,10 @@ export default function WorkPage() {
                         />
                       </div>
                       <div className="mt-3 flex items-center justify-between">
-                        <span className="text-[#ebe8e5] font-medium text-sm group-hover:text-white transition-colors">{p.title}</span>
-                        <span className="text-[#696561] text-xs font-mono">{p.year}</span>
+                        <span className="text-[#171717] font-medium text-sm group-hover:text-black transition-colors">{p.title}</span>
+                        <span className="text-[#77716a] text-xs font-mono">{p.year}</span>
                       </div>
-                      <p className="mt-1 text-[#888480] text-xs leading-snug">{p.description}</p>
+                      <p className="mt-1 text-[#5c5852] text-xs leading-snug">{p.description}</p>
                     </Link>
                   </motion.div>
                 ))}
