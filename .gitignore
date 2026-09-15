@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/about.html
+/public/monogram-HE.svg
+/public/monogram-HE (1).svg
+/src/components/hover-border-gradient-demo.tsx
