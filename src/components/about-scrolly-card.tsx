@@ -6,7 +6,6 @@ import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 const TABS = [
   { id: "parcours", label: "Parcours" },
   { id: "stack", label: "Stack" },
-  { id: "recompenses", label: "Récompenses" },
   { id: "infos", label: "Infos" },
 ] as const;
 
@@ -14,50 +13,37 @@ const EXPAND_END = 0.18;
 
 const parcours = [
   {
-    role: "Lead Solutions Architect & Fractional CTO",
-    org: "Advisory indépendant",
-    period: "2022 — Présent",
-    desc: "Architectures distribuées, pipelines temps réel et conformité cloud pour scale-ups.",
+    role: "Stagiaire, développement mobile",
+    org: "GROWTH-IN · Stage",
+    period: "Fév. 2026 à Avr. 2026",
+    desc: "Développement d’applications Flutter en appliquant la Clean Architecture et le pattern MVVM.",
   },
   {
-    role: "Senior Full-Stack & Cloud Systems",
-    org: "Tech Ventures",
-    period: "2020 — 2022",
-    desc: "Latence critique réduite, plateformes microservices mises à l’échelle.",
-  },
-  {
-    role: "Lead Digital Systems Engineer",
-    org: "Enterprise Digital Labs",
-    period: "2017 — 2020",
-    desc: "Socles multi-tenant banque et télécom, transformation numérique.",
+    role: "Stagiaire, analyse de données",
+    org: "SICASS-BENIN · Stage",
+    period: "Déc. 2023 à Janv. 2024",
+    desc: "Analyse de données de flux en milieu aéroportuaire, avec une attention particulière à la sécurité et à la rigueur des informations critiques.",
   },
 ];
 
 const stacks = [
-  { cat: "Architecture", items: "Node.js, TypeScript, Go, GraphQL, gRPC, Kafka" },
-  { cat: "Cloud", items: "AWS, GCP, Kubernetes, Terraform, CI/CD" },
-  { cat: "Interfaces", items: "Next.js, React, Tailwind, Motion, Three.js" },
-  { cat: "Data", items: "PostgreSQL, Redis, Vector DB, Elasticsearch" },
-];
-
-const awards = [
-  { stat: "99.99%", title: "Uptime", desc: "Plateformes critiques, haute résilience." },
-  { stat: "+15M", title: "Req / jour", desc: "APIs temps réel sans goulet." },
-  { stat: "0", title: "Downtime", desc: "Migrations et déploiements continus." },
-  { stat: "10+", title: "Années", desc: "Architecture, cloud, leadership produit." },
+  { cat: "Data engineering", items: ["Python", "ELT / ETL", "Modélisation de données", "FastAPI"] },
+  { cat: "IA & machine learning", items: ["Recherche sémantique et RAG", "Traitement du langage naturel (NLP)", "Classification d’images", "Pandas", "NumPy", "scikit-learn", "Seaborn", "Statistiques descriptives"] },
+  { cat: "Cloud & data", items: ["AWS Bedrock", "PostgreSQL", "Supabase", "SQLite", "Docker"] },
+  { cat: "Software engineering", items: ["TypeScript", "Next.js", "Vue.js", "Flutter", "Electron", "Git", "GitHub Actions", "CI/CD", "Analyse statique"] },
+  { cat: "Outils", items: ["VS Code", "Android Studio", "Jupyter Notebook", "OpenCode", "Manus AI", "Lunacy"] },
 ];
 
 const infos = [
-  { label: "Depuis", value: "2014" },
-  { label: "Base", value: "Paris / Cotonou · Remote" },
-  { label: "Focus", value: "Architecture, cloud, scale" },
-  { label: "Statut", value: "Ouvert à l’advisory" },
+  { label: "Base", value: "Cotonou, Bénin" },
+  { label: "Focus", value: "Machine learning · Développement web et mobile · Solutions informatiques" },
+  { label: "Disponibilité", value: "Ouvert aux collaborations, projets et opportunités d’apprentissage" },
 ];
 
 function tabFromProgress(progress: number) {
   if (progress <= EXPAND_END) return 0;
   const t = (progress - EXPAND_END) / (1 - EXPAND_END);
-  return Math.min(3, Math.floor(t * 4));
+  return Math.min(TABS.length - 1, Math.floor(t * TABS.length));
 }
 
 export default function AboutScrollyCard() {
@@ -88,7 +74,7 @@ export default function AboutScrollyCard() {
     const el = containerRef.current;
     if (!el) return;
     const track = el.offsetHeight - window.innerHeight;
-    const p = EXPAND_END + ((index + 0.12) / 4) * (1 - EXPAND_END);
+    const p = EXPAND_END + ((index + 0.12) / TABS.length) * (1 - EXPAND_END);
     window.scrollTo({ top: el.offsetTop + p * track, behavior: "smooth" });
   };
 
@@ -108,7 +94,7 @@ export default function AboutScrollyCard() {
         >
           <div className="about-pin__inner">
             <aside className="about-pin__nav" aria-label="Sections">
-              <p className="about-pin__kicker">Parcours, stack et informations</p>
+              <p className="about-pin__kicker">Expériences, compétences et informations</p>
               <div className="about-pin__tabs">
                 {TABS.map((tab, index) => (
                   <button
@@ -131,8 +117,7 @@ export default function AboutScrollyCard() {
                 style={{ pointerEvents: activeIndex === 0 ? "auto" : "none" }}
               >
                 <p className="about-pin__lead">
-                  Je conçois des systèmes qui tiennent : clarté, performance, et une direction
-                  artistique respectée jusqu’au détail.
+                  Mes premières expériences entre développement mobile et analyse de données.
                 </p>
                 <ul className="about-pin__list">
                   {parcours.map((item) => (
@@ -142,7 +127,7 @@ export default function AboutScrollyCard() {
                         <span>{item.period}</span>
                       </div>
                       <p>
-                        {item.org} — {item.desc}
+                        {item.org} : {item.desc}
                       </p>
                     </li>
                   ))}
@@ -159,7 +144,14 @@ export default function AboutScrollyCard() {
                   {stacks.map((item) => (
                     <li key={item.cat}>
                       <span>{item.cat}</span>
-                      <p>{item.items}</p>
+                      <p className="about-pin__skills">
+                        {item.items.map((skill, index) => (
+                          <span key={skill}>
+                            {index > 0 && <i aria-hidden="true">•</i>}
+                            {skill}
+                          </span>
+                        ))}
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -170,23 +162,6 @@ export default function AboutScrollyCard() {
                 animate={{ opacity: activeIndex === 2 ? 1 : 0 }}
                 transition={{ duration: 0.35 }}
                 style={{ pointerEvents: activeIndex === 2 ? "auto" : "none" }}
-              >
-                <ul className="about-pin__awards">
-                  {awards.map((item) => (
-                    <li key={item.title}>
-                      <b>{item.stat}</b>
-                      <strong>{item.title}</strong>
-                      <p>{item.desc}</p>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                className="about-pin__panel"
-                animate={{ opacity: activeIndex === 3 ? 1 : 0 }}
-                transition={{ duration: 0.35 }}
-                style={{ pointerEvents: activeIndex === 3 ? "auto" : "none" }}
               >
                 <ul className="about-pin__infos">
                   {infos.map((item) => (
