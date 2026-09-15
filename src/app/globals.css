@@ -320,6 +320,28 @@ img {
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
+.letter-roll {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  height: 1em;
+}
+
+.letter-roll__character {
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+}
+
+.letter-roll__track {
+  display: flex;
+  flex-direction: column;
+  height: 2em;
+  line-height: 1em;
+}
+
+.letter-roll__track > span { height: 1em; }
+
 .reference-header__cluster .reference-header__link {
   min-height: 48px;
 }

@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { LetterRoll } from "@/components/ui/letter-roll";
 
 export default function NavHeader() {
   const pathname = usePathname();
@@ -102,21 +103,21 @@ export default function NavHeader() {
               href="/about"
               className={`reference-header__link ${isActive("/about") ? "is-active" : ""}`}
             >
-              ABOUT ME
+              <LetterRoll label="ABOUT ME" />
             </Link>
 
             <Link
               href="/work"
               className={`reference-header__link ${isActive("/work") ? "is-active" : ""}`}
             >
-              PROJECTS
+              <LetterRoll label="PROJECTS" />
             </Link>
 
             <Link
               href="/writing"
               className={`reference-header__link ${isActive("/writing") ? "is-active" : ""}`}
             >
-              BLOG
+              <LetterRoll label="BLOG" />
             </Link>
           </div>
         </nav>
@@ -129,7 +130,7 @@ export default function NavHeader() {
             aria-controls="contact-menu"
             onClick={() => setContactOpen((open) => !open)}
           >
-            CONTACT
+            <LetterRoll label="CONTACT" />
           </button>
 
           <AnimatePresence>
