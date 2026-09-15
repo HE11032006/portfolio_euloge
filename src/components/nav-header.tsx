@@ -59,7 +59,7 @@ export default function NavHeader() {
       window.removeEventListener("resize", updateHeaderTheme);
       window.cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (!contactOpen) return;
@@ -86,11 +86,12 @@ export default function NavHeader() {
   }, [contactOpen]);
 
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <>
       <header className={`reference-header${away ? " is-away" : ""}${onDark ? " is-on-dark" : ""}`}>
-        <Link href="/" className="reference-header__logo" aria-label="Euloge HOUESSOU - accueil">
+        <Link href="/about" className="reference-header__logo" aria-label="Euloge HOUESSOU - à propos">
           <img className="reference-header__logo--dark" src="/logo-clair.png" alt="HE" />
           <img className="reference-header__logo--light" src="/logo-sombre.png" alt="HE" />
         </Link>
