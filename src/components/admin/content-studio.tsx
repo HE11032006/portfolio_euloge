@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { useEffect, useRef, useState } from "react";
 import type { BlogPost, ContentCollection, ContentStore, LocalizedText } from "@/lib/content-types";
@@ -102,7 +103,23 @@ export default function ContentStudio() {
   const certifications = store.certifications;
 
   const refresh = async () => { const response = await fetch("/api/admin/content", { cache: "no-store" }); if (!response.ok) throw new Error("Le studio local n’est pas activé."); setStore(await response.json() as ContentStore); setStatus(""); };
-  useEffect(() => { void refresh().catch((error: Error) => setStatus(error.message)); }, []);
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        const response = await fetch("/api/admin/content", { cache: "no-store" });
+        if (!response.ok) throw new Error("Le studio local n’est pas activé.");
+        const data = await response.json() as ContentStore;
+        if (!cancelled) {
+          setStore(data);
+          setStatus("");
+        }
+      } catch (error) {
+        if (!cancelled) setStatus((error as Error).message);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, []);
   const update = (key: string, value: unknown) => setDraft((current) => ({ ...current, [key]: value }));
   const reset = (nextCollection = collection) => { setEditingKey(null); setPreviewOpen(false); setDraft(emptyDraft(nextCollection)); };
   const itemKey = (item: any) => collection === "blog-categories" ? localizedValue(item).fr : String(collection === "certifications" ? item.id : item.slug);
