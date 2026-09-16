@@ -1,1 +1,25 @@
-[]
+[
+  {
+    "slug": "indaba-x-benin-2026",
+    "title": "IndabaX Bénin 2026 : une immersion dans la communauté IA",
+    "shortDescription": "Retour sur ma participation à IndabaX Bénin, un moment de rencontres, d'apprentissage et d'échanges autour de l'intelligence artificielle.",
+    "coverImage": "/blog/indaba-x-benin-2026.jpg",
+    "category": "Événements",
+    "date": "12 sept. 2026",
+    "readTime": "3 min",
+    "sections": [
+      {
+        "heading": "Une communauté réunie autour de l'IA",
+        "body": "J'ai eu la chance de participer à IndabaX Bénin 2026. Cette rencontre a réuni des personnes curieuses, des étudiants, des chercheurs et des professionnels qui partagent un même intérêt : comprendre et faire avancer l'intelligence artificielle sur le continent africain."
+      },
+      {
+        "heading": "Apprendre au contact des autres",
+        "body": "Au-delà des contenus techniques, l'événement m'a rappelé la valeur des échanges directs. Discuter des parcours, des projets et des défis concrets permet de mieux situer ses propres apprentissages et de voir plus loin que les outils du moment."
+      },
+      {
+        "heading": "Ce que je retiens",
+        "body": "Je repars avec encore plus d'envie de construire dans le machine learning et de continuer à apprendre avec la communauté. Pour moi, les rencontres comme IndabaX sont aussi importantes que la pratique : elles donnent du contexte, des idées et des connexions pour faire évoluer des projets utiles."
+      }
+    ]
+  }
+]
