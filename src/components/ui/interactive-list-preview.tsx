@@ -1,4 +1,5 @@
 // Built using Hyperiux Vault: https://vault.hyperiux.com
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 "use client";
 
