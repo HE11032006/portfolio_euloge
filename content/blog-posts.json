@@ -1,25 +1,16 @@
 [
   {
     "slug": "indaba-x-benin-2026",
-    "title": "IndabaX Bénin 2026 : une immersion dans la communauté IA",
-    "shortDescription": "Retour sur ma participation à IndabaX Bénin, un moment de rencontres, d'apprentissage et d'échanges autour de l'intelligence artificielle.",
+    "title": { "fr": "IndabaX Bénin 2026 : une immersion dans la communauté IA", "en": "IndabaX Benin 2026: Immersed in the AI community" },
+    "shortDescription": { "fr": "Retour sur ma participation à IndabaX Bénin, un moment de rencontres, d'apprentissage et d'échanges autour de l'intelligence artificielle.", "en": "A look back at my participation in IndabaX Benin, a moment of encounters, learning and exchange around artificial intelligence." },
     "coverImage": "/blog/indaba-x-benin-2026.jpg",
-    "category": "Événements",
-    "date": "12 sept. 2026",
-    "readTime": "3 min",
+    "category": { "fr": "Événements", "en": "Events" },
+    "date": { "fr": "12 sept. 2026", "en": "Sep 12, 2026" },
+    "readTime": { "fr": "3 min", "en": "3 min" },
     "sections": [
-      {
-        "heading": "Une communauté réunie autour de l'IA",
-        "body": "J'ai eu la chance de participer à IndabaX Bénin 2026. Cette rencontre a réuni des personnes curieuses, des étudiants, des chercheurs et des professionnels qui partagent un même intérêt : comprendre et faire avancer l'intelligence artificielle sur le continent africain."
-      },
-      {
-        "heading": "Apprendre au contact des autres",
-        "body": "Au-delà des contenus techniques, l'événement m'a rappelé la valeur des échanges directs. Discuter des parcours, des projets et des défis concrets permet de mieux situer ses propres apprentissages et de voir plus loin que les outils du moment."
-      },
-      {
-        "heading": "Ce que je retiens",
-        "body": "Je repars avec encore plus d'envie de construire dans le machine learning et de continuer à apprendre avec la communauté. Pour moi, les rencontres comme IndabaX sont aussi importantes que la pratique : elles donnent du contexte, des idées et des connexions pour faire évoluer des projets utiles."
-      }
+      { "heading": { "fr": "Une communauté réunie autour de l'IA", "en": "A community gathered around AI" }, "body": { "fr": "J'ai eu la chance de participer à IndabaX Bénin 2026. Cette rencontre a réuni des personnes curieuses, des étudiants, des chercheurs et des professionnels qui partagent un même intérêt : comprendre et faire avancer l'intelligence artificielle sur le continent africain.", "en": "I had the opportunity to attend IndabaX Benin 2026. The event brought together curious people, students, researchers and professionals who share an interest in understanding and advancing artificial intelligence across the African continent." } },
+      { "heading": { "fr": "Apprendre au contact des autres", "en": "Learning from others" }, "body": { "fr": "Au-delà des contenus techniques, l'événement m'a rappelé la valeur des échanges directs. Discuter des parcours, des projets et des défis concrets permet de mieux situer ses propres apprentissages et de voir plus loin que les outils du moment.", "en": "Beyond the technical content, the event reminded me of the value of direct exchange. Discussing journeys, projects and concrete challenges helps put our own learning into perspective and look beyond today's tools." } },
+      { "heading": { "fr": "Ce que je retiens", "en": "What I take away" }, "body": { "fr": "Je repars avec encore plus d'envie de construire dans le machine learning et de continuer à apprendre avec la communauté. Pour moi, les rencontres comme IndabaX sont aussi importantes que la pratique : elles donnent du contexte, des idées et des connexions pour faire évoluer des projets utiles.", "en": "I leave with an even stronger desire to build in machine learning and keep learning with the community. To me, gatherings like IndabaX matter as much as practice: they provide context, ideas and connections for growing useful projects." } }
     ]
   }
 ]
