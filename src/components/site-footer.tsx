@@ -8,7 +8,7 @@ const navLinks = [
   { label: "About", href: "/about" },
   { label: "Work", href: "/work" },
   { label: "Blog", href: "/writing" },
-  { label: "Contact", href: "/contacts" },
+  { label: "Contact", href: "#contact" },
   { label: "Resume", href: "/resume" },
 ];
 
@@ -126,20 +126,20 @@ export default function SiteFooter() {
         >
           {navLinks.map((item) => {
             const active = pathname === item.href;
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                style={{
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  fontSize: 13.5,
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  color: active ? "#ffffff" : "rgba(255, 255, 255, 0.65)",
-                  transition: "color 0.2s ease",
-                }}
-                className="hover:!text-white"
-              >
+            const style = {
+              fontFamily: "'Plus Jakarta Sans', sans-serif",
+              fontSize: 13.5,
+              fontWeight: 600,
+              letterSpacing: "-0.01em",
+              color: active ? "#ffffff" : "rgba(255, 255, 255, 0.65)",
+              transition: "color 0.2s ease",
+            };
+            return item.label === "Contact" ? (
+              <button key={item.label} type="button" style={style} className="footer-contact-trigger hover:!text-white" onClick={() => window.dispatchEvent(new Event("open-contact-menu"))}>
+                Contact
+              </button>
+            ) : (
+              <Link key={item.label} href={item.href} style={style} className="hover:!text-white">
                 {item.label}
               </Link>
             );
