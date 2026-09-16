@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import NavHeader from "@/components/nav-header";
 import SiteFooterWrapper from "@/components/site-footer-wrapper";
-import SiteLoader from "@/components/site-loader";
 import LocaleProvider from "@/components/locale-provider";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -37,7 +36,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="fr" data-scroll-behavior="smooth" className={cn("scroll-smooth", "font-sans", geist.variable)}>
+    <html lang="en" data-scroll-behavior="smooth" className={cn("scroll-smooth", "font-sans", geist.variable)}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
@@ -48,7 +47,6 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       </head>
       <body className="antialiased">
         <LocaleProvider>
-          <SiteLoader />
           <NavHeader />
           <main>{children}</main>
           <SiteFooterWrapper />

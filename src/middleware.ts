@@ -9,13 +9,13 @@ export function middleware(request: NextRequest) {
   // Ce marqueur évite que ce second passage ne redirige à nouveau vers /fr/… .
   if (request.headers.get("x-i18n-rewrite") === "1") return NextResponse.next();
   if (pathname.startsWith("/_next") || pathname.startsWith("/api") || pathname.includes(".")) return NextResponse.next();
-  if (pathname === "/") return NextResponse.redirect(new URL("/fr/about", request.url));
+  if (pathname === "/") return NextResponse.redirect(new URL("/en/about", request.url));
 
   const parts = pathname.split("/").filter(Boolean);
-  const locale = locales.includes(parts[0]) ? parts[0] : "fr";
+  const locale = locales.includes(parts[0]) ? parts[0] : "en";
   const route = locales.includes(parts[0]) ? `/${parts.slice(1).join("/")}` : pathname;
   const base = route.split("/").filter(Boolean)[0];
-  if (!locales.includes(parts[0]) && publicRoutes.includes(base || "")) return NextResponse.redirect(new URL(`/fr${pathname}`, request.url));
+  if (!locales.includes(parts[0]) && publicRoutes.includes(base || "")) return NextResponse.redirect(new URL(`/en${pathname}`, request.url));
   if (!locales.includes(parts[0])) return NextResponse.next();
 
   const headers = new Headers(request.headers);
