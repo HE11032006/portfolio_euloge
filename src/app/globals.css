@@ -344,6 +344,12 @@ img {
 
 .letter-roll__track > span { height: 1em; }
 
+.letter-roll__track--static {
+  display: inline-block;
+  height: 1em;
+  line-height: 1em;
+}
+
 .reference-header__cluster .reference-header__link {
   min-height: 48px;
 }
@@ -1675,6 +1681,8 @@ img {
   position: sticky;
   top: 88px;
   z-index: 45;
+  align-self: start;
+  height: fit-content;
   grid-column: 1;
 }
 

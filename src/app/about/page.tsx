@@ -11,6 +11,10 @@ export default function AboutPage() {
   return <div className="surface-light" style={{ minHeight: "100vh" }}>
     <section className="page-start" style={{ paddingBottom: 80 }}><div><div className="about-hero__intro"><div className="about-hero__photo"><img src="/HE.jpg" alt="HOUESSOU Euloge" /></div><h1 className="about-hero__title type-display"><ShutterTitle text={t.about.greeting} /><br /><ShutterTitle text="Euloge" /></h1></div></div><div className="about-hero__summary"><div><span className="about-hero__label">{t.about.me}</span></div><div className="about-hero__copy"><p>{t.about.summary}</p></div></div></section>
     <AboutScrollyCard />
-    <CertificationsCarousel certifications={certificationData as Certification[]} />
+    <CertificationsCarousel
+      certifications={(certificationData as Certification[]).filter(
+        (cert) => cert.kind === "specialization" || !cert.specializationId,
+      )}
+    />
   </div>;
 }

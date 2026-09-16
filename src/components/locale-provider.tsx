@@ -7,11 +7,11 @@ import { defaultLocale, getTranslations, isLocale, localePath, type Locale } fro
 type LocaleContextValue = { locale: Locale; t: ReturnType<typeof getTranslations>; switchLocale: () => void; href: (path: string) => string };
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
-export default function LocaleProvider({ children }: { children: ReactNode }) {
+export default function LocaleProvider({ children, initialLocale = defaultLocale }: { children: ReactNode; initialLocale?: Locale }) {
   const pathname = usePathname();
   const router = useRouter();
   const pathLocale = pathname.split("/")[1];
-  const [storedLocale, setStoredLocale] = useState<Locale>(defaultLocale);
+  const [storedLocale, setStoredLocale] = useState<Locale>(initialLocale);
   const locale = isLocale(pathLocale) ? pathLocale : storedLocale;
 
   useEffect(() => {

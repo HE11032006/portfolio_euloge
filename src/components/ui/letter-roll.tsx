@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type LetterRollProps = {
   label: string;
@@ -10,6 +10,13 @@ type LetterRollProps = {
 export function LetterRoll({ label }: LetterRollProps) {
   const reduceMotion = useReducedMotion();
   const [isHovered, setIsHovered] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const staticText = !mounted || reduceMotion;
 
   return (
     <span
@@ -22,10 +29,12 @@ export function LetterRoll({ label }: LetterRollProps) {
     >
       {label.split("").map((character, index) => (
         <span className="letter-roll__character" key={`${character}-${index}`} aria-hidden="true">
-          {character === " " ? "\u00A0" : (
+          {character === " " ? "\u00A0" : staticText ? (
+            <span className="letter-roll__track letter-roll__track--static">{character}</span>
+          ) : (
             <motion.span
               className="letter-roll__track"
-              animate={{ y: reduceMotion || !isHovered ? 0 : "-50%" }}
+              animate={{ y: isHovered ? "-50%" : 0 }}
               transition={{ duration: 0.34, delay: isHovered ? index * 0.028 : 0, ease: [0.22, 1, 0.36, 1] }}
             >
               <span>{character}</span>
