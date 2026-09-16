@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { useLocale } from "@/components/locale-provider";
 
 const SESSION_KEY = "euloge-portfolio-loader-seen";
 
 export default function SiteLoader() {
+  const { t } = useLocale();
   const [visible, setVisible] = useState(false);
   const [showName, setShowName] = useState(false);
   const [leaving, setLeaving] = useState(false);
@@ -36,7 +38,7 @@ export default function SiteLoader() {
         <motion.div
           className="site-loader"
           role="status"
-          aria-label="Chargement du portfolio"
+          aria-label={t.loader.label}
           initial={{ y: 0 }}
           animate={{ y: leaving ? "-100%" : 0 }}
           transition={{ duration: reduceMotion ? 0.1 : 0.42, ease: [0.76, 0, 0.24, 1] }}
