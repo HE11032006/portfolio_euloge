@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "slug": "everycli",
+    "title": { "fr": "EveryCli", "en": "EveryCli" },
+    "shortDescription": { "fr": "Un assistant CLI local qui retrouve la bonne commande à partir d'une intention en langage naturel.", "en": "A local CLI assistant that finds the right command from a natural-language intent." },
+    "year": "2026",
+    "category": { "fr": "CLI · IA locale", "en": "CLI · Local AI" },
+    "image": "/textures/bg-dark.png",
+    "problem": { "fr": "Trouver une commande Git, Docker ou Linux peut casser le rythme de travail : il faut souvent quitter le terminal, chercher en ligne, puis vérifier la syntaxe.", "en": "Finding a Git, Docker or Linux command can break the workflow: you often need to leave the terminal, search online, and verify the syntax." },
+    "solution": { "fr": "EveryCli permet de décrire son intention en français ou en anglais. Il combine une recherche lexicale et sémantique pour proposer les commandes les plus pertinentes, directement dans le terminal.", "en": "EveryCli lets you describe your intent in French or English. It combines lexical and semantic search to suggest the most relevant commands directly in the terminal." },
+    "audience": { "fr": "Pensé pour les développeurs et power users, les personnes qui travaillent hors ligne ou accordent de l'importance à la confidentialité, ainsi que les utilisateurs Linux et Windows.", "en": "Designed for developers and power users, people who work offline or value privacy, and Linux and Windows users." },
+    "resolution": { "fr": "Le client Rust dialogue en JSON/TCP avec un daemon local. Le daemon conserve le modèle ONNX en mémoire, interroge un corpus YAML, puis associe recherche lexicale et re-ranking sémantique. Si le daemon est indisponible, une recherche lexicale déterministe prend le relais. Aucune commande ne s'exécute sans confirmation explicite.", "en": "The Rust client communicates over JSON/TCP with a local daemon. The daemon keeps the ONNX model in memory, queries a YAML corpus, and combines lexical search with semantic re-ranking. If the daemon is unavailable, deterministic lexical search takes over. No command runs without explicit confirmation." },
+    "stack": { "fr": "Rust · ONNX Runtime · paraphrase-multilingual-MiniLM-L12-v2 · YAML · TypeScript · Next.js · Python · Jupyter Notebook · Shell · PowerShell", "en": "Rust · ONNX Runtime · paraphrase-multilingual-MiniLM-L12-v2 · YAML · TypeScript · Next.js · Python · Jupyter Notebook · Shell · PowerShell" },
+    "liveUrl": "https://everycli.vercel.app",
+    "githubUrl": "https://github.com/HE11032006/EveryCli"
+  }
+]
