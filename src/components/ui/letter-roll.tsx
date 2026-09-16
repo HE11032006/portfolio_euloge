@@ -13,7 +13,7 @@ export function LetterRoll({ label }: LetterRollProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    queueMicrotask(() => setMounted(true));
   }, []);
 
   const staticText = !mounted || reduceMotion;
