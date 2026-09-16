@@ -1,4 +1,4 @@
-import type { LocalizedText } from "@/lib/i18n";
+import type { LocalizedText } from "@/lib/i18n-core";
 
 export type { LocalizedText };
 export type CertificationKind = "certification" | "specialization";
