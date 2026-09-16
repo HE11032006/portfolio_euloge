@@ -512,9 +512,9 @@ export default function InteractiveListPreview({
         >
           <table className="relative z-30 w-full table-fixed border-collapse">
             <colgroup>
-              <col style={{ width: "35%" }} />
-              <col style={{ width: "53%" }} />
-              <col style={{ width: "12%" }} />
+              <col style={{ width: "30%" }} />
+              <col style={{ width: "60%" }} />
+              <col style={{ width: "10%" }} />
             </colgroup>
 
             <tbody>
