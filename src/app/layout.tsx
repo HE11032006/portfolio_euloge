@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import NavHeader from "@/components/nav-header";
 import SiteFooterWrapper from "@/components/site-footer-wrapper";
+import SiteLoader from "@/components/site-loader";
+import LocaleProvider from "@/components/locale-provider";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
 
@@ -11,14 +13,14 @@ const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 export const metadata: Metadata = {
   title: "Euloge HOUESSOU",
   description:
-    "Portfolio de HOUESSOU Euloge, Lead Architect & Product Technologist. Architectures distribuées, systèmes haute performance et leadership produit.",
+    "Portfolio d’Euloge HOUESSOU, passionné par le machine learning, la recherche sémantique, le développement web et mobile.",
   keywords: [
     "HOUESSOU Euloge",
-    "Lead Architect",
-    "Product Technologist",
-    "Distributed Systems",
-    "Cloud Architecture",
-    "FinTech",
+    "Machine learning",
+    "Recherche sémantique",
+    "Développement web",
+    "Développement mobile",
+    "Intelligence artificielle",
   ],
   authors: [{ name: "HOUESSOU Euloge" }],
   icons: {
@@ -40,9 +42,12 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         />
       </head>
       <body className="antialiased">
-        <NavHeader />
-        <main>{children}</main>
-        <SiteFooterWrapper />
+        <LocaleProvider>
+          <SiteLoader />
+          <NavHeader />
+          <main>{children}</main>
+          <SiteFooterWrapper />
+        </LocaleProvider>
       </body>
     </html>
   );
