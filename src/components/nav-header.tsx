@@ -86,6 +86,12 @@ export default function NavHeader() {
     };
   }, [contactOpen]);
 
+  useEffect(() => {
+    const openContactMenu = () => setContactOpen(true);
+    window.addEventListener("open-contact-menu", openContactMenu);
+    return () => window.removeEventListener("open-contact-menu", openContactMenu);
+  }, []);
+
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
   if (pathname.startsWith("/admin")) return null;
 
@@ -128,7 +134,7 @@ export default function NavHeader() {
             className={`reference-header__contact ${contactOpen ? "is-open" : ""}`}
             aria-expanded={contactOpen}
             aria-controls="contact-menu"
-            onClick={() => setContactOpen((open) => !open)}
+          onClick={() => setContactOpen((open) => !open)}
           >
             <LetterRoll label="CONTACT" />
           </button>
@@ -143,6 +149,9 @@ export default function NavHeader() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.18 }}
               >
+                <button type="button" className="reference-header__contact-close" onClick={() => setContactOpen(false)}>
+                  Fermer ×
+                </button>
                 <a href="mailto:eulogemn@gmail.com" aria-label="Envoyer un email">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>
                   Email
@@ -189,16 +198,37 @@ export default function NavHeader() {
         {mobileOpen && (
           <motion.nav
             className="reference-mobile-menu"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.18 }}
             aria-label="Navigation mobile"
+            onClick={() => setMobileOpen(false)}
           >
-            <Link href="/work" onClick={() => setMobileOpen(false)}>PROJECTS <span>↗</span></Link>
-            <Link href="/about" onClick={() => setMobileOpen(false)}>ABOUT ME <span>↗</span></Link>
-            <Link href="/writing" onClick={() => setMobileOpen(false)}>BLOG <span>↗</span></Link>
-            <Link href="/contacts" onClick={() => setMobileOpen(false)}>CONTACT <span>↗</span></Link>
+            <motion.div
+              className="reference-mobile-menu__panel"
+              initial={{ y: 32 }}
+              animate={{ y: 0 }}
+              exit={{ y: 32 }}
+              transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+              onClick={(event) => event.stopPropagation()}
+            >
+              {[
+                ["ABOUT ME", "/about"],
+                ["PROJECTS", "/work"],
+                ["BLOG", "/writing"],
+              ].map(([label, href], index) => (
+                <motion.div
+                  key={href}
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 14 }}
+                  transition={{ duration: 0.24, delay: 0.08 + index * 0.06 }}
+                >
+                  <Link href={href} onClick={() => setMobileOpen(false)}>{label}</Link>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.nav>
         )}
       </AnimatePresence>
