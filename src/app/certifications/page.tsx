@@ -2,44 +2,16 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { ArrowLeft, BadgeCheck, Eye } from "lucide-react";
 import type { Certification, CertificationKind } from "@/lib/content-types";
 import certificationData from "../../../content/certifications.json";
 import { ShutterTitle } from "@/components/ui/shutter-title";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import CertificationViewer from "@/components/certification-viewer";
 
 type Filter = "all" | CertificationKind;
 const certifications = certificationData as Certification[];
-
-function CertModal({
-  cert,
-  onClose,
-}: {
-  cert: Certification;
-  onClose: () => void;
-}) {
-  return (
-    <motion.div className="cert-modal" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={onClose}>
-      <motion.div
-        className="cert-modal__panel"
-        initial={{ y: 16, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        exit={{ y: 16, opacity: 0 }}
-        onClick={(event) => event.stopPropagation()}
-      >
-        <button type="button" className="cert-modal__close" onClick={onClose} aria-label="Fermer">
-          ×
-        </button>
-        {cert.certificateImage && <img src={cert.certificateImage} alt={`Certificat ${cert.title}`} />}
-        <div className="cert-modal__meta">
-          {cert.issuer && <p>{cert.issuer}</p>}
-          <h3>{cert.title}</h3>
-          {cert.obtainedAt && <span>Obtenu en {cert.obtainedAt}</span>}
-          {cert.verifyUrl && <a href={cert.verifyUrl} target="_blank" rel="noreferrer">Vérifier la certification ↗</a>}
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
 
 export default function CertificationsPage() {
   const [filter, setFilter] = useState<Filter>("all");
@@ -53,7 +25,10 @@ export default function CertificationsPage() {
   return (
     <div className="certs-page">
       <Link href="/about" className="certs-page__back">
-        ← Retour
+        <HoverBorderGradient as="span" containerClassName="certs__gradient-btn" className="certs__gradient-content" duration={1.8}>
+          <ArrowLeft aria-hidden="true" />
+          <span>Retour</span>
+        </HoverBorderGradient>
       </Link>
 
       <header className="certs-page__header">
@@ -111,14 +86,24 @@ export default function CertificationsPage() {
               </ul>
               <div className="certs-page__actions">
                 {cert.certificateImage && (
-                <button type="button" onClick={() => setOpen(cert)}>
-                  Voir l’image
-                </button>
+                  <HoverBorderGradient
+                    as="button"
+                    onClick={() => setOpen(cert)}
+                    containerClassName="certs__gradient-btn"
+                    className="certs__gradient-content"
+                    duration={1.6}
+                  >
+                    <Eye aria-hidden="true" />
+                    <span>Voir le certificat</span>
+                  </HoverBorderGradient>
                 )}
                 {cert.verifyUrl && (
-                <a href={cert.verifyUrl} target="_blank" rel="noreferrer">
-                  Vérifier la certif ↗
-                </a>
+                  <a href={cert.verifyUrl} target="_blank" rel="noreferrer">
+                    <HoverBorderGradient as="span" containerClassName="certs__gradient-btn" className="certs__gradient-content" duration={1.6}>
+                      <BadgeCheck aria-hidden="true" />
+                      <span>Vérifier</span>
+                    </HoverBorderGradient>
+                  </a>
                 )}
               </div>
             </div>
@@ -127,7 +112,7 @@ export default function CertificationsPage() {
       </div>
 
       <AnimatePresence>
-        {open && <CertModal cert={open} onClose={() => setOpen(null)} />}
+        {open && <CertificationViewer cert={open} certifications={certifications} onClose={() => setOpen(null)} onSelect={setOpen} />}
       </AnimatePresence>
     </div>
   );
