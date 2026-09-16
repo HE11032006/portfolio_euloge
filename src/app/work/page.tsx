@@ -8,7 +8,7 @@ import projectData from "../../../content/projects.json";
 import { ShutterTitle } from "@/components/ui/shutter-title";
 import InteractiveListPreview from "@/components/ui/interactive-list-preview";
 import { useLocale } from "@/components/locale-provider";
-import { localized } from "@/lib/i18n-core";
+import { localized, type Locale } from "@/lib/i18n-core";
 
 const projects = projectData as Project[];
 type ViewMode = "list" | "grid";
@@ -20,6 +20,42 @@ function ProjectImage({ project }: { project: Project }) {
     <div className="flex h-full w-full items-center justify-center bg-[#e8e4dc] text-4xl text-[#8a8379]" aria-hidden="true">
       <span>HE</span>
     </div>
+  );
+}
+
+function ProjectGrid({
+  items,
+  locale,
+  href,
+  className,
+}: {
+  items: Project[];
+  locale: Locale;
+  href: (path: string) => string;
+  className?: string;
+}) {
+  return (
+    <section className={className}>
+      {items.map((project, index) => (
+        <motion.article
+          key={project.slug}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.25, delay: index * 0.04 }}
+        >
+          <Link href={href(`/work/${project.slug}`)} className="group block">
+            <div className="aspect-[4/3] overflow-hidden rounded-xl border border-black/10 bg-black/5 transition group-hover:border-black/30">
+              <ProjectImage project={project} />
+            </div>
+            <div className="mt-3 flex items-center justify-between">
+              <span className="text-sm font-medium text-[#171717] transition-colors group-hover:text-black">{localized(project.title, locale)}</span>
+              <span className="font-mono text-xs text-[#77716a]">{project.year}</span>
+            </div>
+            <p className="mt-1 text-xs leading-snug text-[#5c5852]">{localized(project.shortDescription, locale)}</p>
+          </Link>
+        </motion.article>
+      ))}
+    </section>
   );
 }
 
@@ -79,7 +115,7 @@ export default function WorkPage() {
             ))}
           </div>
 
-          <div className="flex items-center gap-1.5 text-xs">
+          <div className="hidden items-center gap-1.5 text-xs md:flex">
             <button
               type="button"
               aria-pressed={view === "list"}
@@ -106,58 +142,55 @@ export default function WorkPage() {
         {!filtered.length ? (
           <p className="content-empty">{t.common.noProjects}</p>
         ) : (
-          <AnimatePresence mode="wait">
-            {view === "list" ? (
-              <motion.section
-                key={`list-${activeFilter}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.22 }}
-                className="work-list-section mt-2 mb-28 w-full"
-              >
-                <InteractiveListPreview
-                  items={listItems}
-                  bgColor="transparent"
-                  imageSize={1}
-                  theme="light"
-                  duration={0.44}
-                  smoothness={0.26}
-                  lerp={0.24}
-                  className="work-list-preview"
-                />
-              </motion.section>
-            ) : (
-              <motion.section
-                key={`grid-${activeFilter}`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.24 }}
-                className="mb-28 mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-              >
-                {filtered.map((project, index) => (
-                  <motion.article
-                    key={project.slug}
-                    initial={{ opacity: 0, scale: 0.96 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.25, delay: index * 0.04 }}
+          <>
+            <ProjectGrid
+              items={filtered}
+              locale={locale}
+              href={href}
+              className="mb-28 mt-8 grid grid-cols-1 gap-6 md:hidden"
+            />
+
+            <div className="hidden md:block">
+              <AnimatePresence mode="wait">
+                {view === "list" ? (
+                  <motion.section
+                    key={`list-${activeFilter}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.22 }}
+                    className="work-list-section mt-2 mb-28 w-full"
                   >
-                    <Link href={href(`/work/${project.slug}`)} className="group block">
-                      <div className="aspect-[4/3] overflow-hidden rounded-xl border border-black/10 bg-black/5 transition group-hover:border-black/30">
-                        <ProjectImage project={project} />
-                      </div>
-                      <div className="mt-3 flex items-center justify-between">
-                        <span className="text-sm font-medium text-[#171717] transition-colors group-hover:text-black">{localized(project.title, locale)}</span>
-                        <span className="font-mono text-xs text-[#77716a]">{project.year}</span>
-                      </div>
-                      <p className="mt-1 text-xs leading-snug text-[#5c5852]">{localized(project.shortDescription, locale)}</p>
-                    </Link>
-                  </motion.article>
-                ))}
-              </motion.section>
-            )}
-          </AnimatePresence>
+                    <InteractiveListPreview
+                      items={listItems}
+                      bgColor="transparent"
+                      imageSize={1}
+                      theme="light"
+                      duration={0.44}
+                      smoothness={0.26}
+                      lerp={0.24}
+                      className="work-list-preview"
+                    />
+                  </motion.section>
+                ) : (
+                  <motion.section
+                    key={`grid-${activeFilter}`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.22 }}
+                  >
+                    <ProjectGrid
+                      items={filtered}
+                      locale={locale}
+                      href={href}
+                      className="mb-28 mt-8 grid grid-cols-2 gap-6 lg:grid-cols-3"
+                    />
+                  </motion.section>
+                )}
+              </AnimatePresence>
+            </div>
+          </>
         )}
       </div>
     </div>
