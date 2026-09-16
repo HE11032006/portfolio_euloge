@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "mathematics-for-machine-learning-2026",
+    "title": { "fr": "Mathematics for Machine Learning", "en": "Mathematics for Machine Learning" },
+    "subtitle": { "fr": "Spécialisation de trois cours sur les bases mathématiques utiles au machine learning.", "en": "A three-course specialization covering the mathematical foundations useful for machine learning." },
+    "logo": "/certifications/imperial-college-london.webp",
+    "kind": "specialization",
+    "points": [
+      { "fr": "Algèbre linéaire", "en": "Linear algebra" },
+      { "fr": "Calcul différentiel et intégral", "en": "Calculus" },
+      { "fr": "Analyse en composantes principales (PCA)", "en": "Principal component analysis (PCA)" },
+      { "fr": "Fondations mathématiques du machine learning", "en": "Mathematical foundations of machine learning" }
+    ],
+    "issuer": { "fr": "Imperial College London via Coursera", "en": "Imperial College London via Coursera" },
+    "obtainedAt": { "fr": "avril 2026", "en": "April 2026" },
+    "certificateImage": "/certifications/mathematics-for-machine-learning.jpg",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/R806404V7LDZ",
+    "featured": true
+  }
+]
