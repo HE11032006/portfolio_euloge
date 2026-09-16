@@ -1,20 +1,1090 @@
 [
   {
     "id": "mathematics-for-machine-learning-2026",
-    "title": { "fr": "Mathematics for Machine Learning", "en": "Mathematics for Machine Learning" },
-    "subtitle": { "fr": "Spécialisation de trois cours sur les bases mathématiques utiles au machine learning.", "en": "A three-course specialization covering the mathematical foundations useful for machine learning." },
+    "title": {
+      "fr": "Mathematics for Machine Learning",
+      "en": "Mathematics for Machine Learning"
+    },
+    "subtitle": {
+      "fr": "Spécialisation de trois cours sur les bases mathématiques utiles au machine learning.",
+      "en": "A three-course specialization covering the mathematical foundations useful for machine learning."
+    },
     "logo": "/certifications/imperial-college-london.webp",
     "kind": "specialization",
     "points": [
-      { "fr": "Algèbre linéaire", "en": "Linear algebra" },
-      { "fr": "Calcul différentiel et intégral", "en": "Calculus" },
-      { "fr": "Analyse en composantes principales (PCA)", "en": "Principal component analysis (PCA)" },
-      { "fr": "Fondations mathématiques du machine learning", "en": "Mathematical foundations of machine learning" }
+      {
+        "fr": "Algèbre linéaire",
+        "en": "Linear algebra"
+      },
+      {
+        "fr": "Calcul différentiel et intégral",
+        "en": "Calculus"
+      },
+      {
+        "fr": "Analyse en composantes principales (PCA)",
+        "en": "Principal component analysis (PCA)"
+      },
+      {
+        "fr": "Fondations mathématiques du machine learning",
+        "en": "Mathematical foundations of machine learning"
+      }
     ],
-    "issuer": { "fr": "Imperial College London via Coursera", "en": "Imperial College London via Coursera" },
-    "obtainedAt": { "fr": "avril 2026", "en": "April 2026" },
+    "issuer": {
+      "fr": "Imperial College London via Coursera",
+      "en": "Imperial College London via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
     "certificateImage": "/certifications/mathematics-for-machine-learning.jpg",
     "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/R806404V7LDZ",
-    "featured": true
+    "featured": true,
+    "containedCertificationIds": [
+      "mathematics-for-machine-learning-linear-algebra-2026",
+      "mathematics-for-machine-learning-multivariate-calculus-2026",
+      "mathematics-for-machine-learning-pca-2026"
+    ]
+  },
+  {
+    "id": "software-engineering-hkust-2026",
+    "title": {
+      "fr": "Software Engineering",
+      "en": "Software Engineering"
+    },
+    "subtitle": {
+      "fr": "Spécialisation consacrée à l’architecture logicielle, à la modélisation UML et aux modèles de conception.",
+      "en": "A specialization focused on software architecture, UML modeling, and design patterns."
+    },
+    "logo": "/content/certifications/hkust-logo-1789541632008.webp",
+    "kind": "specialization",
+    "points": [
+      {
+        "fr": "Langage de modélisation unifié (UML)",
+        "en": "Unified Modeling Language (UML)"
+      },
+      {
+        "fr": "Modèles de conception de logiciels",
+        "en": "Software design patterns"
+      },
+      {
+        "fr": "Architecture logicielle",
+        "en": "Software architecture"
+      },
+      {
+        "fr": "Gestion de projet logiciel",
+        "en": "Software project management"
+      }
+    ],
+    "issuer": {
+      "fr": "The Hong Kong University of Science and Technology via Coursera",
+      "en": "The Hong Kong University of Science and Technology via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
+    "certificateImage": "/content/certifications/certificate-landing-page-5ey9ow0cqmdz-1789541700449.webp",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/5EY9OW0CQMDZ",
+    "featured": false,
+    "containedCertificationIds": [
+      "software-engineering-modeling-uml-2026",
+      "software-engineering-implementation-testing-2026",
+      "software-engineering-design-project-management-2026"
+    ]
+  },
+  {
+    "id": "python-for-everybody-2026",
+    "title": {
+      "fr": "Python for Everybody",
+      "en": "Python for Everybody"
+    },
+    "subtitle": {
+      "fr": "Spécialisation complète sur Python, la récupération de données, les bases de données et la visualisation.",
+      "en": "A comprehensive specialization covering Python, data retrieval, databases, and data visualization."
+    },
+    "logo": "/content/certifications/1631307390795-1789541953363.webp",
+    "kind": "specialization",
+    "points": [
+      {
+        "fr": "Python",
+        "en": "Python"
+      },
+      {
+        "fr": "Bases de données",
+        "en": "Databases"
+      },
+      {
+        "fr": "Web Scraping et API REST",
+        "en": "Web scraping and REST APIs"
+      },
+      {
+        "fr": "SQL et visualisation de données",
+        "en": "SQL and data visualization"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
+    "certificateImage": "/content/certifications/1777283353326-1789544596491.jpg",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/EJTRQIMAVJJL",
+    "featured": false,
+    "containedCertificationIds": [
+      "programming-for-everybody-python-2026",
+      "python-data-structures-2026",
+      "using-python-to-access-web-data-2026",
+      "using-databases-with-python-2026",
+      "python-data-capstone-2026"
+    ]
+  },
+  {
+    "id": "getting-started-with-git-and-github-2026",
+    "title": {
+      "fr": "Getting Started with Git and GitHub",
+      "en": "Getting Started with Git and GitHub"
+    },
+    "subtitle": {
+      "fr": "Certification d’introduction à la gestion de versions avec Git et à la collaboration sur GitHub.",
+      "en": "An introductory certificate in version control with Git and collaboration on GitHub."
+    },
+    "logo": "/content/certifications/ibm-logo-1789542161594.jpg",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Git",
+        "en": "Git"
+      },
+      {
+        "fr": "GitHub",
+        "en": "GitHub"
+      },
+      {
+        "fr": "Gestion de versions",
+        "en": "Version control"
+      },
+      {
+        "fr": "Collaboration logicielle",
+        "en": "Software collaboration"
+      }
+    ],
+    "issuer": {
+      "fr": "IBM via Coursera",
+      "en": "IBM via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
+    "certificateImage": "/content/certifications/getting-started-git-1789544579587.webp",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/95EDEN7PHTMQ",
+    "featured": false
+  },
+  {
+    "id": "introduction-to-devops-2026",
+    "title": {
+      "fr": "Introduction to DevOps",
+      "en": "Introduction to DevOps"
+    },
+    "subtitle": {
+      "fr": "Certification d’introduction aux principes, pratiques et outils du DevOps.",
+      "en": "An introduction to DevOps principles, practices, and tools."
+    },
+    "logo": "/content/certifications/ibm-logo-1789542188150.jpg",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "DevOps",
+        "en": "DevOps"
+      },
+      {
+        "fr": "Intégration continue",
+        "en": "Continuous integration"
+      },
+      {
+        "fr": "Déploiement continu",
+        "en": "Continuous deployment"
+      },
+      {
+        "fr": "Automatisation",
+        "en": "Automation"
+      }
+    ],
+    "issuer": {
+      "fr": "IBM via Coursera",
+      "en": "IBM via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
+    "certificateImage": "/content/certifications/intro-devops-1789544568437.webp",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/5MDUMY5SVKM4",
+    "featured": false
+  },
+  {
+    "id": "introduction-to-cloud-computing-2026",
+    "title": {
+      "fr": "Introduction to Cloud Computing",
+      "en": "Introduction to Cloud Computing"
+    },
+    "subtitle": {
+      "fr": "Certification d’introduction aux concepts fondamentaux du cloud computing et du DevOps.",
+      "en": "An introduction to the fundamental concepts of cloud computing and DevOps."
+    },
+    "logo": "/content/certifications/ibm-logo-1789542206551.jpg",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "DevOps",
+        "en": "DevOps"
+      },
+      {
+        "fr": "Cloud computing",
+        "en": "Cloud computing"
+      },
+      {
+        "fr": "Services cloud",
+        "en": "Cloud services"
+      },
+      {
+        "fr": "Infrastructure informatique",
+        "en": "IT infrastructure"
+      }
+    ],
+    "issuer": {
+      "fr": "IBM via Coursera",
+      "en": "IBM via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
+    "certificateImage": "/content/certifications/cloud-computing-1789544552712.webp",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/YT6DP619MAPT",
+    "featured": false
+  },
+  {
+    "id": "introduction-to-agile-development-and-scrum-2026",
+    "title": {
+      "fr": "Introduction to Agile Development and Scrum",
+      "en": "Introduction to Agile Development and Scrum"
+    },
+    "subtitle": {
+      "fr": "Certification sur les méthodes agiles et le pilotage de projets avec Scrum.",
+      "en": "A certificate covering agile methods and project management with Scrum."
+    },
+    "logo": "/content/certifications/ibm-logo-1789542232700.jpg",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Gestion de projet agile",
+        "en": "Agile project management"
+      },
+      {
+        "fr": "Scrum",
+        "en": "Scrum"
+      },
+      {
+        "fr": "Méthodes agiles",
+        "en": "Agile methods"
+      },
+      {
+        "fr": "Planification de projet",
+        "en": "Project planning"
+      }
+    ],
+    "issuer": {
+      "fr": "IBM via Coursera",
+      "en": "IBM via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
+    "certificateImage": "/content/certifications/dev-agile-1789544539849.webp",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/Z7T8NLTRV0QY",
+    "featured": false
+  },
+  {
+    "id": "web-applications-for-everybody-2026",
+    "title": {
+      "fr": "Web Applications for Everybody",
+      "en": "Web Applications for Everybody"
+    },
+    "subtitle": {
+      "fr": "Spécialisation consacrée au développement d’applications web avec jQuery et PHP natif.",
+      "en": "A specialization focused on web application development with jQuery and native PHP."
+    },
+    "logo": "/content/certifications/1631307390795-1789542289470.webp",
+    "kind": "specialization",
+    "points": [
+      {
+        "fr": "jQuery",
+        "en": "jQuery"
+      },
+      {
+        "fr": "PHP natif",
+        "en": "Native PHP"
+      },
+      {
+        "fr": "SQL",
+        "en": "SQL"
+      },
+      {
+        "fr": "JavaScript et JSON",
+        "en": "JavaScript and JSON"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "avril 2026",
+      "en": "April 2026"
+    },
+    "certificateImage": "/content/certifications/web-for-1789544506418.jpg",
+    "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/M82FSN9V43M3",
+    "featured": false,
+    "containedCertificationIds": [
+      "building-web-applications-in-php-2026",
+      "introduction-to-sql-2026",
+      "building-database-applications-in-php-2026",
+      "javascript-jquery-and-json-2026"
+    ]
+  },
+  {
+    "id": "python-data-associate-2026",
+    "title": {
+      "fr": "Python Data Associate",
+      "en": "Python Data Associate"
+    },
+    "subtitle": {
+      "fr": "Certification professionnelle en Python, manipulation et analyse de données.",
+      "en": "Professional certification in Python, data manipulation, and data analysis."
+    },
+    "logo": "/content/certifications/datacampinc-logo-1789542311467.jpg",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Python",
+        "en": "Python"
+      },
+      {
+        "fr": "Manipulation de données",
+        "en": "Data manipulation"
+      },
+      {
+        "fr": "Analyse de données",
+        "en": "Data analysis"
+      },
+      {
+        "fr": "Programmation",
+        "en": "Programming"
+      }
+    ],
+    "issuer": {
+      "fr": "DataCamp",
+      "en": "DataCamp"
+    },
+    "obtainedAt": {
+      "fr": "février 2026",
+      "en": "February 2026"
+    },
+    "certificateImage": "/content/certifications/certif-python-data-asscoiate-1789544473067.webp",
+    "verifyUrl": "https://www.datacamp.com/statement-of-accomplishment/verify/PDA0019287223078",
+    "featured": false
+  },
+  {
+    "id": "associate-data-analyst-2026",
+    "title": {
+      "fr": "Associate Data Analyst",
+      "en": "Associate Data Analyst"
+    },
+    "subtitle": {
+      "fr": "Certification professionnelle en analyse de données, PostgreSQL et pipelines ETL.",
+      "en": "Professional certification in data analysis, PostgreSQL, and ETL pipelines."
+    },
+    "logo": "/content/certifications/datacampinc-logo-1789542335680.jpg",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "PostgreSQL",
+        "en": "PostgreSQL"
+      },
+      {
+        "fr": "Extraction, transformation et chargement (ETL)",
+        "en": "Extract, transform, load (ETL)"
+      },
+      {
+        "fr": "Ingénierie des données",
+        "en": "Data engineering"
+      },
+      {
+        "fr": "Pipelines de données",
+        "en": "Data pipelines"
+      }
+    ],
+    "issuer": {
+      "fr": "DataCamp",
+      "en": "DataCamp"
+    },
+    "obtainedAt": {
+      "fr": "février 2026",
+      "en": "February 2026"
+    },
+    "certificateImage": "/content/certifications/associate-data-analyst-1789544488554.webp",
+    "verifyUrl": "https://www.datacamp.com/statement-of-accomplishment/verify/DAA0011640532115",
+    "featured": false
+  },
+  {
+    "id": "mathematics-for-machine-learning-linear-algebra-2026",
+    "title": {
+      "fr": "Mathematics for Machine Learning: Linear Algebra",
+      "en": "Mathematics for Machine Learning: Linear Algebra"
+    },
+    "subtitle": {
+      "fr": "Cours consacré aux fondements de l’algèbre linéaire pour le machine learning.",
+      "en": "A course on the foundations of linear algebra for machine learning."
+    },
+    "logo": "/certifications/imperial-college-london.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Algèbre linéaire",
+        "en": "Linear algebra"
+      },
+      {
+        "fr": "Vecteurs et matrices",
+        "en": "Vectors and matrices"
+      },
+      {
+        "fr": "Espaces vectoriels",
+        "en": "Vector spaces"
+      },
+      {
+        "fr": "Machine learning",
+        "en": "Machine learning"
+      }
+    ],
+    "issuer": {
+      "fr": "Imperial College London via Coursera",
+      "en": "Imperial College London via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "10 avril 2026",
+      "en": "April 10, 2026"
+    },
+    "certificateImage": "/content/certifications/linear-1789543011714.webp",
+    "verifyUrl": "https://coursera.org/verify/SQ4OJ4PXM0T0",
+    "featured": false,
+    "specializationId": "mathematics-for-machine-learning-2026"
+  },
+  {
+    "id": "mathematics-for-machine-learning-multivariate-calculus-2026",
+    "title": {
+      "fr": "Mathematics for Machine Learning: Multivariate Calculus",
+      "en": "Mathematics for Machine Learning: Multivariate Calculus"
+    },
+    "subtitle": {
+      "fr": "Cours consacré au calcul différentiel et intégral à plusieurs variables pour le machine learning.",
+      "en": "A course on multivariate calculus for machine learning."
+    },
+    "logo": "/certifications/imperial-college-london.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Calcul multivarié",
+        "en": "Multivariate calculus"
+      },
+      {
+        "fr": "Dérivées",
+        "en": "Derivatives"
+      },
+      {
+        "fr": "Optimisation",
+        "en": "Optimization"
+      },
+      {
+        "fr": "Machine learning",
+        "en": "Machine learning"
+      }
+    ],
+    "issuer": {
+      "fr": "Imperial College London via Coursera",
+      "en": "Imperial College London via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "20 avril 2026",
+      "en": "April 20, 2026"
+    },
+    "certificateImage": "/content/certifications/multiva-1789543022629.webp",
+    "verifyUrl": "https://coursera.org/verify/ROUQNZYML1PY",
+    "featured": false,
+    "specializationId": "mathematics-for-machine-learning-2026"
+  },
+  {
+    "id": "mathematics-for-machine-learning-pca-2026",
+    "title": {
+      "fr": "Mathematics for Machine Learning: PCA",
+      "en": "Mathematics for Machine Learning: PCA"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à l’analyse en composantes principales et à ses applications en machine learning.",
+      "en": "A course on principal component analysis and its applications in machine learning."
+    },
+    "logo": "/certifications/imperial-college-london.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Analyse en composantes principales",
+        "en": "Principal component analysis"
+      },
+      {
+        "fr": "Réduction de dimension",
+        "en": "Dimensionality reduction"
+      },
+      {
+        "fr": "Algèbre linéaire",
+        "en": "Linear algebra"
+      },
+      {
+        "fr": "Machine learning",
+        "en": "Machine learning"
+      }
+    ],
+    "issuer": {
+      "fr": "Imperial College London via Coursera",
+      "en": "Imperial College London via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "20 avril 2026",
+      "en": "April 20, 2026"
+    },
+    "certificateImage": "/content/certifications/pca-1789543031320.webp",
+    "verifyUrl": "https://coursera.org/verify/4REVGB09G9GQ",
+    "featured": false,
+    "specializationId": "mathematics-for-machine-learning-2026"
+  },
+  {
+    "id": "software-engineering-modeling-uml-2026",
+    "title": {
+      "fr": "Software Engineering: Modeling Software Systems using UML",
+      "en": "Software Engineering: Modeling Software Systems using UML"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à la modélisation des systèmes logiciels avec UML.",
+      "en": "A course on modeling software systems using UML."
+    },
+    "logo": "/content/certifications/hkust-logo-1789543044401.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "UML",
+        "en": "UML"
+      },
+      {
+        "fr": "Modélisation logicielle",
+        "en": "Software modeling"
+      },
+      {
+        "fr": "Systèmes logiciels",
+        "en": "Software systems"
+      },
+      {
+        "fr": "Architecture logicielle",
+        "en": "Software architecture"
+      }
+    ],
+    "issuer": {
+      "fr": "The Hong Kong University of Science and Technology via Coursera",
+      "en": "The Hong Kong University of Science and Technology via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "20 avril 2026",
+      "en": "April 20, 2026"
+    },
+    "certificateImage": "/content/certifications/software-1789543070580.webp",
+    "verifyUrl": "https://coursera.org/verify/UI453N6SXXQK",
+    "featured": false,
+    "specializationId": "software-engineering-hkust-2026"
+  },
+  {
+    "id": "software-engineering-implementation-testing-2026",
+    "title": {
+      "fr": "Software Engineering: Implementation and Testing",
+      "en": "Software Engineering: Implementation and Testing"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à l’implémentation et aux tests des logiciels.",
+      "en": "A course on software implementation and testing."
+    },
+    "logo": "/content/certifications/hkust-logo-1789543086468.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Implémentation logicielle",
+        "en": "Software implementation"
+      },
+      {
+        "fr": "Tests logiciels",
+        "en": "Software testing"
+      },
+      {
+        "fr": "Qualité logicielle",
+        "en": "Software quality"
+      },
+      {
+        "fr": "Développement logiciel",
+        "en": "Software development"
+      }
+    ],
+    "issuer": {
+      "fr": "The Hong Kong University of Science and Technology via Coursera",
+      "en": "The Hong Kong University of Science and Technology via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "20 avril 2026",
+      "en": "April 20, 2026"
+    },
+    "certificateImage": "/content/certifications/implementation-testing-1789543082567.webp",
+    "verifyUrl": "https://coursera.org/verify/DO1EHNVYS3EN",
+    "featured": false,
+    "specializationId": "software-engineering-hkust-2026"
+  },
+  {
+    "id": "software-engineering-design-project-management-2026",
+    "title": {
+      "fr": "Software Engineering: Software Design and Project Management",
+      "en": "Software Engineering: Software Design and Project Management"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à la conception logicielle et à la gestion de projets informatiques.",
+      "en": "A course on software design and software project management."
+    },
+    "logo": "/content/certifications/hkust-logo-1789543096513.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Conception logicielle",
+        "en": "Software design"
+      },
+      {
+        "fr": "Gestion de projet",
+        "en": "Project management"
+      },
+      {
+        "fr": "Modèles de conception",
+        "en": "Design patterns"
+      },
+      {
+        "fr": "Ingénierie logicielle",
+        "en": "Software engineering"
+      }
+    ],
+    "issuer": {
+      "fr": "The Hong Kong University of Science and Technology via Coursera",
+      "en": "The Hong Kong University of Science and Technology via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "20 avril 2026",
+      "en": "April 20, 2026"
+    },
+    "certificateImage": "/content/certifications/desing-projet-1789543101029.webp",
+    "verifyUrl": "https://coursera.org/verify/PSS2RTERFDZ9",
+    "featured": false,
+    "specializationId": "software-engineering-hkust-2026"
+  },
+  {
+    "id": "programming-for-everybody-python-2026",
+    "title": {
+      "fr": "Programming for Everybody (Getting Started with Python)",
+      "en": "Programming for Everybody (Getting Started with Python)"
+    },
+    "subtitle": {
+      "fr": "Cours d’introduction à la programmation avec le langage Python.",
+      "en": "An introductory course to programming with Python."
+    },
+    "logo": "/content/certifications/1631307390795-1789543114357.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Python",
+        "en": "Python"
+      },
+      {
+        "fr": "Programmation",
+        "en": "Programming"
+      },
+      {
+        "fr": "Variables et fonctions",
+        "en": "Variables and functions"
+      },
+      {
+        "fr": "Structures de contrôle",
+        "en": "Control structures"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "10 avril 2026",
+      "en": "April 10, 2026"
+    },
+    "certificateImage": "/content/certifications/getting-python-1789543127205.webp",
+    "verifyUrl": "https://coursera.org/verify/URCPE8YI7SXV",
+    "featured": false,
+    "specializationId": "python-for-everybody-2026"
+  },
+  {
+    "id": "python-data-structures-2026",
+    "title": {
+      "fr": "Python Data Structures",
+      "en": "Python Data Structures"
+    },
+    "subtitle": {
+      "fr": "Cours consacré aux structures de données et à leur utilisation en Python.",
+      "en": "A course on data structures and their use in Python."
+    },
+    "logo": "/content/certifications/1631307390795-1789543143583.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Structures de données",
+        "en": "Data structures"
+      },
+      {
+        "fr": "Python",
+        "en": "Python"
+      },
+      {
+        "fr": "Listes et dictionnaires",
+        "en": "Lists and dictionaries"
+      },
+      {
+        "fr": "Tuples et fichiers",
+        "en": "Tuples and files"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "10 avril 2026",
+      "en": "April 10, 2026"
+    },
+    "certificateImage": "/content/certifications/python-data-structure-1789543139301.webp",
+    "verifyUrl": "https://coursera.org/verify/4D9CVSQVQWVO",
+    "featured": false,
+    "specializationId": "python-for-everybody-2026"
+  },
+  {
+    "id": "using-python-to-access-web-data-2026",
+    "title": {
+      "fr": "Using Python to Access Web Data",
+      "en": "Using Python to Access Web Data"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à la récupération de données web avec Python, le Web Scraping et les API.",
+      "en": "A course on accessing web data with Python, web scraping, and APIs."
+    },
+    "logo": "/content/certifications/1631307390795-1789543151145.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Python",
+        "en": "Python"
+      },
+      {
+        "fr": "Web Scraping",
+        "en": "Web scraping"
+      },
+      {
+        "fr": "API REST",
+        "en": "REST APIs"
+      },
+      {
+        "fr": "XML et JSON",
+        "en": "XML and JSON"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "10 avril 2026",
+      "en": "April 10, 2026"
+    },
+    "certificateImage": "/content/certifications/python-data-access-1789543156550.webp",
+    "verifyUrl": "https://coursera.org/verify/6NB6OP3FBIXG",
+    "featured": false,
+    "specializationId": "python-for-everybody-2026"
+  },
+  {
+    "id": "using-databases-with-python-2026",
+    "title": {
+      "fr": "Using Databases with Python",
+      "en": "Using Databases with Python"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à l’utilisation de bases de données avec Python et SQL.",
+      "en": "A course on using databases with Python and SQL."
+    },
+    "logo": "/content/certifications/1631307390795-1789543166703.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Python",
+        "en": "Python"
+      },
+      {
+        "fr": "Bases de données",
+        "en": "Databases"
+      },
+      {
+        "fr": "SQL",
+        "en": "SQL"
+      },
+      {
+        "fr": "SQLite",
+        "en": "SQLite"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "14 avril 2026",
+      "en": "April 14, 2026"
+    },
+    "certificateImage": "/content/certifications/database-python-1789543178275.webp",
+    "verifyUrl": "https://coursera.org/verify/15G9NDJA647A",
+    "featured": false,
+    "specializationId": "python-for-everybody-2026"
+  },
+  {
+    "id": "python-data-capstone-2026",
+    "title": {
+      "fr": "Capstone: Retrieving, Processing, and Visualizing Data with Python",
+      "en": "Capstone: Retrieving, Processing, and Visualizing Data with Python"
+    },
+    "subtitle": {
+      "fr": "Projet de synthèse consacré à la récupération, au traitement et à la visualisation de données avec Python.",
+      "en": "A capstone project on retrieving, processing, and visualizing data with Python."
+    },
+    "logo": "/content/certifications/1631307390795-1789543194117.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "Python",
+        "en": "Python"
+      },
+      {
+        "fr": "Récupération de données",
+        "en": "Data retrieval"
+      },
+      {
+        "fr": "Traitement de données",
+        "en": "Data processing"
+      },
+      {
+        "fr": "Visualisation de données",
+        "en": "Data visualization"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "14 avril 2026",
+      "en": "April 14, 2026"
+    },
+    "certificateImage": "/content/certifications/retriever-pythno-vizualisation-1789543241619.webp",
+    "verifyUrl": "https://coursera.org/verify/K1S1PT40LZHJ",
+    "featured": false,
+    "specializationId": "python-for-everybody-2026"
+  },
+  {
+    "id": "building-web-applications-in-php-2026",
+    "title": {
+      "fr": "Building Web Applications in PHP",
+      "en": "Building Web Applications in PHP"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à la création d’applications web avec PHP.",
+      "en": "A course on building web applications with PHP."
+    },
+    "logo": "/content/certifications/1631307390795-1789543258297.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "PHP",
+        "en": "PHP"
+      },
+      {
+        "fr": "Applications web",
+        "en": "Web applications"
+      },
+      {
+        "fr": "Programmation côté serveur",
+        "en": "Server-side programming"
+      },
+      {
+        "fr": "Développement web",
+        "en": "Web development"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "21 mars 2026",
+      "en": "March 21, 2026"
+    },
+    "certificateImage": "/content/certifications/web-application-1789543318576.webp",
+    "verifyUrl": "https://coursera.org/verify/TWSFYFXOJXPM",
+    "featured": false,
+    "specializationId": "web-applications-for-everybody-2026"
+  },
+  {
+    "id": "introduction-to-sql-2026",
+    "title": {
+      "fr": "Introduction to Structured Query Language (SQL)",
+      "en": "Introduction to Structured Query Language (SQL)"
+    },
+    "subtitle": {
+      "fr": "Cours d’introduction au langage SQL et à l’interrogation de bases de données.",
+      "en": "An introduction to SQL and querying databases."
+    },
+    "logo": "/content/certifications/1631307390795-1789543328187.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "SQL",
+        "en": "SQL"
+      },
+      {
+        "fr": "Bases de données",
+        "en": "Databases"
+      },
+      {
+        "fr": "Requêtes",
+        "en": "Queries"
+      },
+      {
+        "fr": "Modélisation des données",
+        "en": "Data modeling"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "22 mars 2026",
+      "en": "March 22, 2026"
+    },
+    "certificateImage": "/content/certifications/sql-1789543372013.webp",
+    "verifyUrl": "https://coursera.org/verify/4L5H055Y2OHX",
+    "featured": false,
+    "specializationId": "web-applications-for-everybody-2026"
+  },
+  {
+    "id": "building-database-applications-in-php-2026",
+    "title": {
+      "fr": "Building Database Applications in PHP",
+      "en": "Building Database Applications in PHP"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à la création d’applications PHP connectées à des bases de données.",
+      "en": "A course on building PHP applications connected to databases."
+    },
+    "logo": "/content/certifications/1631307390795-1789544430102.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "PHP",
+        "en": "PHP"
+      },
+      {
+        "fr": "Bases de données",
+        "en": "Databases"
+      },
+      {
+        "fr": "SQL",
+        "en": "SQL"
+      },
+      {
+        "fr": "Applications web",
+        "en": "Web applications"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "30 mars 2026",
+      "en": "March 30, 2026"
+    },
+    "certificateImage": "/content/certifications/buildinf-datanase-1789544436277.webp",
+    "verifyUrl": "https://coursera.org/verify/KZO8J04936NW",
+    "featured": false,
+    "specializationId": "web-applications-for-everybody-2026"
+  },
+  {
+    "id": "javascript-jquery-and-json-2026",
+    "title": {
+      "fr": "JavaScript, jQuery, and JSON",
+      "en": "JavaScript, jQuery, and JSON"
+    },
+    "subtitle": {
+      "fr": "Cours consacré à JavaScript, jQuery et à la manipulation de données JSON.",
+      "en": "A course on JavaScript, jQuery, and handling JSON data."
+    },
+    "logo": "/content/certifications/1631307390795-1789543406270.webp",
+    "kind": "certification",
+    "points": [
+      {
+        "fr": "JavaScript",
+        "en": "JavaScript"
+      },
+      {
+        "fr": "jQuery",
+        "en": "jQuery"
+      },
+      {
+        "fr": "JSON",
+        "en": "JSON"
+      },
+      {
+        "fr": "Développement web",
+        "en": "Web development"
+      }
+    ],
+    "issuer": {
+      "fr": "University of Michigan via Coursera",
+      "en": "University of Michigan via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "15 avril 2026",
+      "en": "April 15, 2026"
+    },
+    "certificateImage": "/content/certifications/js-1789543411040.webp",
+    "verifyUrl": "https://coursera.org/verify/3AVW2OTJCPE7",
+    "featured": false,
+    "specializationId": "web-applications-for-everybody-2026"
   }
 ]

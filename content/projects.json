@@ -1,17 +1,386 @@
 [
   {
     "slug": "everycli",
-    "title": { "fr": "EveryCli", "en": "EveryCli" },
-    "shortDescription": { "fr": "Un assistant CLI local qui retrouve la bonne commande à partir d'une intention en langage naturel.", "en": "A local CLI assistant that finds the right command from a natural-language intent." },
+    "title": {
+      "fr": "EveryCli",
+      "en": "EveryCli"
+    },
+    "shortDescription": {
+      "fr": "Un assistant CLI local qui retrouve la bonne commande à partir d'une intention en langage naturel.",
+      "en": "A local CLI assistant that finds the right command from a natural-language intent."
+    },
     "year": "2026",
-    "category": { "fr": "CLI · IA locale", "en": "CLI · Local AI" },
-    "image": "/textures/bg-dark.png",
-    "problem": { "fr": "Trouver une commande Git, Docker ou Linux peut casser le rythme de travail : il faut souvent quitter le terminal, chercher en ligne, puis vérifier la syntaxe.", "en": "Finding a Git, Docker or Linux command can break the workflow: you often need to leave the terminal, search online, and verify the syntax." },
-    "solution": { "fr": "EveryCli permet de décrire son intention en français ou en anglais. Il combine une recherche lexicale et sémantique pour proposer les commandes les plus pertinentes, directement dans le terminal.", "en": "EveryCli lets you describe your intent in French or English. It combines lexical and semantic search to suggest the most relevant commands directly in the terminal." },
-    "audience": { "fr": "Pensé pour les développeurs et power users, les personnes qui travaillent hors ligne ou accordent de l'importance à la confidentialité, ainsi que les utilisateurs Linux et Windows.", "en": "Designed for developers and power users, people who work offline or value privacy, and Linux and Windows users." },
-    "resolution": { "fr": "Le client Rust dialogue en JSON/TCP avec un daemon local. Le daemon conserve le modèle ONNX en mémoire, interroge un corpus YAML, puis associe recherche lexicale et re-ranking sémantique. Si le daemon est indisponible, une recherche lexicale déterministe prend le relais. Aucune commande ne s'exécute sans confirmation explicite.", "en": "The Rust client communicates over JSON/TCP with a local daemon. The daemon keeps the ONNX model in memory, queries a YAML corpus, and combines lexical search with semantic re-ranking. If the daemon is unavailable, deterministic lexical search takes over. No command runs without explicit confirmation." },
-    "stack": { "fr": "Rust · ONNX Runtime · paraphrase-multilingual-MiniLM-L12-v2 · YAML · TypeScript · Next.js · Python · Jupyter Notebook · Shell · PowerShell", "en": "Rust · ONNX Runtime · paraphrase-multilingual-MiniLM-L12-v2 · YAML · TypeScript · Next.js · Python · Jupyter Notebook · Shell · PowerShell" },
+    "category": {
+      "fr": "CLI · IA locale",
+      "en": "CLI · Local AI"
+    },
+    "image": "/content/projects/everycli-photo-1789538477965.webp",
+    "problem": {
+      "fr": "Trouver une commande Git, Docker ou Linux peut casser le rythme de travail : il faut souvent quitter le terminal, chercher en ligne, puis vérifier la syntaxe.",
+      "en": "Finding a Git, Docker or Linux command can break the workflow: you often need to leave the terminal, search online, and verify the syntax."
+    },
+    "solution": {
+      "fr": "EveryCli permet de décrire son intention en français ou en anglais. Il combine une recherche lexicale et sémantique pour proposer les commandes les plus pertinentes, directement dans le terminal.",
+      "en": "EveryCli lets you describe your intent in French or English. It combines lexical and semantic search to suggest the most relevant commands directly in the terminal."
+    },
+    "audience": {
+      "fr": "Pensé pour les développeurs et power users, les personnes qui travaillent hors ligne ou accordent de l'importance à la confidentialité, ainsi que les utilisateurs Linux et Windows.",
+      "en": "Designed for developers and power users, people who work offline or value privacy, and Linux and Windows users."
+    },
+    "resolution": {
+      "fr": "Le client Rust dialogue en JSON/TCP avec un daemon local. Le daemon conserve le modèle ONNX en mémoire, interroge un corpus YAML, puis associe recherche lexicale et re-ranking sémantique. Si le daemon est indisponible, une recherche lexicale déterministe prend le relais. Aucune commande ne s'exécute sans confirmation explicite.",
+      "en": "The Rust client communicates over JSON/TCP with a local daemon. The daemon keeps the ONNX model in memory, queries a YAML corpus, and combines lexical search with semantic re-ranking. If the daemon is unavailable, deterministic lexical search takes over. No command runs without explicit confirmation."
+    },
+    "stack": {
+      "fr": "Rust · ONNX Runtime · paraphrase-multilingual-MiniLM-L12-v2 · YAML · TypeScript · Next.js · Python · Jupyter Notebook · Shell · PowerShell",
+      "en": "Rust · ONNX Runtime · paraphrase-multilingual-MiniLM-L12-v2 · YAML · TypeScript · Next.js · Python · Jupyter Notebook · Shell · PowerShell"
+    },
     "liveUrl": "https://everycli.vercel.app",
     "githubUrl": "https://github.com/HE11032006/EveryCli"
+  },
+  {
+    "slug": "recal",
+    "title": {
+      "fr": "Recal",
+      "en": "Recal"
+    },
+    "shortDescription": {
+      "fr": "Agent personnel qui surveille automatiquement des opportunités académiques et professionnelles selon le profil étudiant.",
+      "en": "Personal agent that automatically monitors academic and professional opportunities based on a student profile."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "Assistant IA / Productivité",
+      "en": "AI Assistant / Productivity"
+    },
+    "image": "/content/projects/imag-1789538543839.webp",
+    "problem": {
+      "fr": "Les étudiants perdent du temps à rechercher manuellement des hackathons, stages, bourses et fellowships sur plusieurs plateformes, avec un risque élevé de manquer des opportunités pertinentes.",
+      "en": "Students spend significant time manually tracking hackathons, internships, scholarships, and fellowships across multiple platforms, with a high risk of missing relevant opportunities."
+    },
+    "solution": {
+      "fr": "Recal centralise cette veille via un agent qui surveille automatiquement les sources d’opportunités et aligne les résultats sur le profil utilisateur.",
+      "en": "Recal centralizes this workflow through an agent that automatically monitors opportunity sources and matches results against the user profile."
+    },
+    "audience": {
+      "fr": "Étudiants, jeunes diplômés et candidats recherchant des opportunités de formation, de financement ou d’insertion professionnelle.",
+      "en": "Students, recent graduates, and applicants looking for training, funding, or career opportunities."
+    },
+    "resolution": {
+      "fr": "Le dépôt est structuré en plusieurs couches — frontend, backend, contracts, infrastructure et scripts — avec une documentation de progression et de projet. Cette séparation indique une architecture modulaire orientée produit, dans laquelle la collecte et le suivi des opportunités sont séparés des interfaces et de l’infrastructure afin de faciliter les évolutions.",
+      "en": "The repository is structured into multiple layers — frontend, backend, contracts, infrastructure, and scripts — with project and progress documentation. This separation reflects a modular, product-oriented architecture in which opportunity collection and tracking are separated from the interfaces and infrastructure to support future evolution."
+    },
+    "stack": {
+      "fr": "Vite.js · React · TypeScript · Python · AWS · Amazon Bedrock · Electron",
+      "en": "Vite.js · React · TypeScript · Python · AWS · Amazon Bedrock · Electron"
+    },
+    "githubUrl": "https://github.com/HE11032006/Recal"
+  },
+  {
+    "slug": "securelist",
+    "title": {
+      "fr": "SecureList",
+      "en": "SecureList"
+    },
+    "shortDescription": {
+      "fr": "Application web permettant d’évaluer si un site web ou une application mobile respecte les exigences liées à l’usage des données.",
+      "en": "Web application that helps assess whether a website or mobile app meets requirements related to data usage."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "Conformité & Protection des données",
+      "en": "Compliance & Data Protection"
+    },
+    "image": "/content/projects/securelist-photo-1789538660521.webp",
+    "problem": {
+      "fr": "De nombreux porteurs de projets numériques ne savent pas clairement si leurs pratiques de collecte et d’utilisation des données respectent les obligations applicables.",
+      "en": "Many digital product owners lack clarity on whether their data collection and usage practices meet applicable requirements."
+    },
+    "solution": {
+      "fr": "SecureList fournit une interface web pour vérifier des critères de conformité liés à l’usage des données et aider à identifier les points à corriger.",
+      "en": "SecureList provides a web interface to check compliance criteria related to data usage and identify areas that need correction."
+    },
+    "audience": {
+      "fr": "Développeurs, startups, équipes produit et responsables de sites ou applications souhaitant améliorer leur conformité data.",
+      "en": "Developers, startups, product teams, and website or app owners who want to improve data compliance."
+    },
+    "resolution": {
+      "fr": "Le projet est construit majoritairement en TypeScript avec Vite.js, ce qui fournit une base structurée pour des règles de validation côté application web et permet de faire évoluer les contrôles de conformité.",
+      "en": "The project is primarily built with TypeScript and Vite.js, providing a structured foundation for web-based validation rules and evolvable compliance checks."
+    },
+    "stack": {
+      "fr": "TypeScript · Vite.js · outils de sécurité",
+      "en": "TypeScript · Vite.js · security tools"
+    },
+    "liveUrl": "https://secure-list.vercel.app/",
+    "githubUrl": "https://github.com/HE11032006/SecureList"
+  },
+  {
+    "slug": "veritas",
+    "title": {
+      "fr": "Veritas",
+      "en": "Veritas"
+    },
+    "shortDescription": {
+      "fr": "Jury d’entraînement assisté par IA pour préparer les soutenances, débats et présentations avec des retours argumentés.",
+      "en": "AI-powered practice jury for thesis defenses, debates, and presentations with evidence-based feedback."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "EdTech / IA",
+      "en": "EdTech / AI"
+    },
+    "image": "/content/projects/veritas-photo-1789538736471.webp",
+    "problem": {
+      "fr": "Les étudiants manquent souvent d’un entraînement réaliste avant une soutenance ou une présentation importante, et reçoivent peu de feedback structuré et exploitable.",
+      "en": "Students often lack realistic practice before major defenses or presentations and receive limited structured and actionable feedback."
+    },
+    "solution": {
+      "fr": "Veritas simule un jury d’évaluation assisté par IA capable de produire des retours fondés sur des critères explicites, avec des pistes d’amélioration concrètes.",
+      "en": "Veritas simulates an AI-assisted evaluation jury that provides feedback based on explicit criteria and concrete improvement recommendations."
+    },
+    "audience": {
+      "fr": "Étudiants, candidats à des soutenances académiques, débatteurs et toute personne préparant une prise de parole évaluée.",
+      "en": "Students, academic defense candidates, debaters, and anyone preparing for an evaluated presentation."
+    },
+    "resolution": {
+      "fr": "Le projet combine un backend Python dédié à la logique IA et à l’évaluation avec une couche TypeScript dédiée à l’interface. Cette séparation facilite l’évolution des critères d’évaluation, l’amélioration des retours et l’intégration de nouveaux scénarios d’entraînement.",
+      "en": "The project combines a Python backend for AI and evaluation logic with a TypeScript interface layer. This separation supports evolving evaluation criteria, improved feedback, and new training scenarios."
+    },
+    "stack": {
+      "fr": "Python · FastAPI · TypeScript · Vite · React · Render · Docker · SQL · API IA",
+      "en": "Python · FastAPI · TypeScript · Vite · React · Render · Docker · SQL · AI API"
+    },
+    "liveUrl": "https://veritas-278d.vercel.app/",
+    "githubUrl": "https://github.com/HE11032006/Veritas"
+  },
+  {
+    "slug": "archx",
+    "title": {
+      "fr": "ArchX",
+      "en": "ArchX"
+    },
+    "shortDescription": {
+      "fr": "Assistant IA pour architectes logiciels qui analyse une base de code et propose une stack cible avec un plan de migration.",
+      "en": "AI assistant for software architects that analyzes codebases and recommends a target stack with a migration plan."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "Architecture logicielle / IA",
+      "en": "Software Architecture / AI"
+    },
+    "image": "/content/projects/archx-1789538805929.webp",
+    "problem": {
+      "fr": "Les décisions d’architecture et de migration sont souvent complexes, coûteuses et basées sur des hypothèses partielles plutôt que sur des mesures techniques objectives.",
+      "en": "Architecture and migration decisions are often complex, costly, and based on partial assumptions instead of objective technical measurements."
+    },
+    "solution": {
+      "fr": "ArchX analyse les métriques réelles d’un codebase et génère des recommandations de stack ainsi qu’un plan de migration exploitable.",
+      "en": "ArchX analyzes real codebase metrics and generates actionable stack recommendations and migration plans."
+    },
+    "audience": {
+      "fr": "Architectes logiciels, équipes techniques, leads engineering et organisations planifiant une évolution technologique.",
+      "en": "Software architects, technical teams, engineering leads, and organizations planning technology evolution."
+    },
+    "resolution": {
+      "fr": "Le projet repose principalement sur Python pour l’analyse et la logique de décision, complété par une couche web JavaScript/CSS pour la restitution. Il combine métriques statiques et raisonnement IA afin de produire des recommandations orientées migration.",
+      "en": "The project primarily relies on Python for analysis and decision logic, complemented by a JavaScript/CSS web layer. It combines static metrics and AI reasoning to deliver migration-oriented recommendations."
+    },
+    "stack": {
+      "fr": "Python · TypeScript · React · Vite · modèle affiné",
+      "en": "Python · TypeScript · React · Vite · fine-tuned model"
+    },
+    "githubUrl": "https://github.com/HE11032006/ArchX"
+  },
+  {
+    "slug": "miwakpon",
+    "title": {
+      "fr": "Miwakpon",
+      "en": "Miwakpon"
+    },
+    "shortDescription": {
+      "fr": "Application mobile collaborative en Flutter pour créer, découvrir et rejoindre des événements.",
+      "en": "Collaborative Flutter mobile app to create, discover, and join events."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "Application mobile / Événementiel",
+      "en": "Mobile App / Events"
+    },
+    "image": "/content/projects/icon-1789538874193.jpg",
+    "problem": {
+      "fr": "Les communautés locales manquent souvent d’un espace mobile unique pour publier, trouver et suivre facilement des événements pertinents.",
+      "en": "Local communities often lack a single mobile platform to publish, discover, and follow relevant events."
+    },
+    "solution": {
+      "fr": "Miwakpon fournit une application collaborative permettant aux utilisateurs de créer des événements, d’en découvrir de nouveaux et d’y participer, avec authentification et synchronisation des données.",
+      "en": "Miwakpon provides a collaborative app where users can create events, discover new ones, and participate in them, with authentication and synchronized data."
+    },
+    "audience": {
+      "fr": "Organisateurs d’événements, communautés locales, associations, étudiants et utilisateurs recherchant des activités.",
+      "en": "Event organizers, local communities, associations, students, and users looking for activities."
+    },
+    "resolution": {
+      "fr": "Le projet est développé en Flutter avec une organisation en Clean Architecture, MVVM et Provider. Supabase est utilisé pour l’authentification et les données en temps réel, avec une séparation claire des responsabilités.",
+      "en": "The project is built with Flutter and organized around Clean Architecture, MVVM, and Provider. Supabase handles authentication and real-time data with clear separation of concerns."
+    },
+    "stack": {
+      "fr": "Flutter / Dart · Clean Architecture · MVVM · Provider · Supabase",
+      "en": "Flutter / Dart · Clean Architecture · MVVM · Provider · Supabase"
+    },
+    "githubUrl": "https://github.com/HE11032006/Miwakpon"
+  },
+  {
+    "slug": "blocktine-vitrine",
+    "title": {
+      "fr": "Blocktine Vitrine",
+      "en": "Blocktine Showcase"
+    },
+    "shortDescription": {
+      "fr": "Site vitrine présentant une solution blockchain pensée pour faciliter les tontines au Bénin.",
+      "en": "Showcase website presenting a blockchain solution designed to simplify tontines in Benin."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "Fintech / Blockchain",
+      "en": "Fintech / Blockchain"
+    },
+    "image": "/content/projects/bloctine-1789538943256.webp",
+    "problem": {
+      "fr": "Les tontines reposent souvent sur des processus peu digitalisés, avec des difficultés de transparence, de traçabilité et de confiance entre participants.",
+      "en": "Tontines often rely on low-digital processes, with challenges around transparency, traceability, and trust among participants."
+    },
+    "solution": {
+      "fr": "Blocktine Vitrine présente la proposition de valeur d’une solution blockchain dédiée aux tontines, ainsi que ses bénéfices et sa vision produit.",
+      "en": "Blocktine Showcase presents the value proposition, benefits, and product vision of a blockchain solution dedicated to tontines."
+    },
+    "audience": {
+      "fr": "Participants de tontines, communautés locales, partenaires potentiels et acteurs de l’inclusion financière au Bénin.",
+      "en": "Tontine participants, local communities, potential partners, and financial inclusion stakeholders in Benin."
+    },
+    "resolution": {
+      "fr": "Le dépôt correspond à la couche vitrine du projet Blocktine, orientée communication produit et visibilité publique. L’approche met l’accent sur la clarté du message et la présentation du cas d’usage local.",
+      "en": "The repository is the showcase layer of Blocktine, focused on product communication and public visibility. It emphasizes message clarity and the presentation of a local use case."
+    },
+    "stack": {
+      "fr": "HTML · CSS",
+      "en": "HTML · CSS"
+    },
+    "liveUrl": "https://blocktine.vercel.app/",
+    "githubUrl": "https://github.com/HE11032006/Blocktine_vitrine"
+  },
+  {
+    "slug": "snippet-shrine-pro",
+    "title": {
+      "fr": "Snippet Shrine Pro",
+      "en": "Snippet Shrine Pro"
+    },
+    "shortDescription": {
+      "fr": "Bloc-notes local orienté productivité pour capturer et organiser des notes et snippets directement sur la machine de l’utilisateur.",
+      "en": "Local-first productivity notepad to capture and organize notes and snippets directly on the user’s machine."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "Productivité / Prise de notes",
+      "en": "Productivity / Note Taking"
+    },
+    "image": "/content/projects/gemini-generated-image-a7z34ra7z34ra7z3-1789539080540.webp",
+    "problem": {
+      "fr": "Les utilisateurs ont besoin d’un espace rapide pour stocker des notes ou extraits utiles sans dépendre d’un service cloud ni d’une connexion permanente.",
+      "en": "Users need a fast space to store useful notes or snippets without relying on cloud services or a constant internet connection."
+    },
+    "solution": {
+      "fr": "Snippet Shrine Pro propose un bloc-notes local permettant de centraliser et retrouver facilement des contenus textuels utiles dans un flux de travail quotidien.",
+      "en": "Snippet Shrine Pro provides a local notepad to centralize and quickly retrieve useful textual content in daily workflows."
+    },
+    "audience": {
+      "fr": "Développeurs, étudiants et professionnels qui gèrent régulièrement des notes techniques, idées ou extraits réutilisables.",
+      "en": "Developers, students, and professionals who regularly manage technical notes, ideas, or reusable snippets."
+    },
+    "resolution": {
+      "fr": "Le projet est majoritairement en TypeScript avec une couche CSS, ce qui indique une application front-end structurée pour une expérience de saisie et de consultation fluide. Son orientation locale réduit la dépendance aux services externes et simplifie l’usage hors ligne.",
+      "en": "The project is primarily TypeScript-based with a CSS layer, indicating a structured front-end application for smooth writing and retrieval. Its local-first orientation reduces dependency on external services and supports offline usage."
+    },
+    "stack": {
+      "fr": "TypeScript · CSS · JavaScript · React",
+      "en": "TypeScript · CSS · JavaScript · React"
+    },
+    "githubUrl": "https://github.com/HE11032006/snippet-shrine-pro"
+  },
+  {
+    "slug": "detector-of-faces-and-eyes",
+    "title": {
+      "fr": "Détecteur de visages et d’yeux",
+      "en": "Face and Eye Detector"
+    },
+    "shortDescription": {
+      "fr": "Application Python de vision par ordinateur pour détecter automatiquement les visages et les yeux.",
+      "en": "Python computer vision application that automatically detects faces and eyes."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "Vision par ordinateur / IA",
+      "en": "Computer Vision / AI"
+    },
+    "image": "/content/projects/gemini-generated-image-og4cpiog4cpiog4c-1789539257540.webp",
+    "problem": {
+      "fr": "L’identification visuelle d’éléments du visage en temps réel est utile pour l’apprentissage de la vision par ordinateur et les cas d’usage de base en interaction homme-machine.",
+      "en": "Real-time identification of facial elements is useful for learning computer vision and basic human-computer interaction use cases."
+    },
+    "solution": {
+      "fr": "Le projet implémente un détecteur de visages et d’yeux en Python à l’aide de bibliothèques de vision, afin d’analyser des images ou flux vidéo et d’identifier automatiquement ces zones.",
+      "en": "The project implements a Python face and eye detector using computer vision libraries to analyze images or video streams and identify these regions automatically."
+    },
+    "audience": {
+      "fr": "Étudiants en IA et vision, développeurs Python et personnes découvrant les bases de la détection d’objets.",
+      "en": "AI and computer vision students, Python developers, and learners exploring object detection fundamentals."
+    },
+    "resolution": {
+      "fr": "Le dépôt est entièrement en Python et centré sur le traitement d’image et la logique de détection, avec une finalité pédagogique et démonstrative.",
+      "en": "The repository is entirely Python-based and focused on image processing and detection logic, with a clear educational and demonstrative purpose."
+    },
+    "stack": {
+      "fr": "Python · MediaPipe · TensorFlow",
+      "en": "Python · MediaPipe · TensorFlow"
+    },
+    "githubUrl": "https://github.com/HE11032006/Detector_of_faces_and_eyes"
+  },
+  {
+    "slug": "analyseur-avis-client",
+    "title": {
+      "fr": "Analyseur d’avis client",
+      "en": "Customer Review Sentiment Analyzer"
+    },
+    "shortDescription": {
+      "fr": "Outil Python d’analyse de sentiments qui classe automatiquement des avis clients en positif, négatif ou neutre à partir d’un fichier JSON.",
+      "en": "Python sentiment analysis tool that automatically classifies customer reviews as positive, negative, or neutral from a JSON file."
+    },
+    "year": "2026",
+    "category": {
+      "fr": "NLP / Analyse de sentiments",
+      "en": "NLP / Sentiment Analysis"
+    },
+    "image": "/content/projects/gemini-generated-image-s5f8cbs5f8cbs5f8-1789541373765.webp",
+    "problem": {
+      "fr": "Les entreprises reçoivent un volume important d’avis textuels et ont besoin d’une lecture rapide du ressenti global sans analyse manuelle ligne par ligne.",
+      "en": "Businesses receive large volumes of textual reviews and need a fast understanding of overall sentiment without manual line-by-line analysis."
+    },
+    "solution": {
+      "fr": "Le projet ingère un JSON structuré et attribue une polarité — positive, négative ou neutre — pour faciliter l’exploitation des retours clients.",
+      "en": "The project ingests structured JSON and assigns positive, negative, or neutral polarity to make customer feedback easier to use."
+    },
+    "audience": {
+      "fr": "Analystes, équipes produit et marketing, étudiants en data et IA, et développeurs souhaitant automatiser l’analyse d’avis.",
+      "en": "Analysts, product and marketing teams, data and AI students, and developers who want to automate review analysis."
+    },
+    "resolution": {
+      "fr": "Le dépôt est majoritairement en Python et suit un pipeline entrée JSON → classification de sentiment → sortie exploitable pour l’analyse métier.",
+      "en": "The repository is primarily Python-based and follows a JSON input → sentiment classification → business-usable output pipeline."
+    },
+    "stack": {
+      "fr": "Python · Shell · traitement JSON · classification de sentiments · Transformers",
+      "en": "Python · Shell · JSON processing · sentiment classification · Transformers"
+    },
+    "githubUrl": "https://github.com/HE11032006/Analyseur_avis_client"
   }
 ]

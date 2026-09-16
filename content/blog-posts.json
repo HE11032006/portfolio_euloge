@@ -1,16 +1,260 @@
 [
   {
     "slug": "indaba-x-benin-2026",
-    "title": { "fr": "IndabaX Bénin 2026 : une immersion dans la communauté IA", "en": "IndabaX Benin 2026: Immersed in the AI community" },
-    "shortDescription": { "fr": "Retour sur ma participation à IndabaX Bénin, un moment de rencontres, d'apprentissage et d'échanges autour de l'intelligence artificielle.", "en": "A look back at my participation in IndabaX Benin, a moment of encounters, learning and exchange around artificial intelligence." },
+    "title": {
+      "fr": "IndabaX Bénin 2026 : une immersion dans la communauté IA",
+      "en": "IndabaX Benin 2026: Immersed in the AI community"
+    },
+    "shortDescription": {
+      "fr": "Retour sur ma participation à IndabaX Bénin, un moment de rencontres, d'apprentissage et d'échanges autour de l'intelligence artificielle.",
+      "en": "A look back at my participation in IndabaX Benin, a moment of encounters, learning and exchange around artificial intelligence."
+    },
     "coverImage": "/blog/indaba-x-benin-2026.jpg",
-    "category": { "fr": "Événements", "en": "Events" },
-    "date": { "fr": "12 sept. 2026", "en": "Sep 12, 2026" },
-    "readTime": { "fr": "3 min", "en": "3 min" },
+    "category": {
+      "fr": "Événements",
+      "en": "Events"
+    },
+    "date": {
+      "fr": "12 sept. 2026",
+      "en": "Sep 12, 2026"
+    },
+    "readTime": {
+      "fr": "3 min",
+      "en": "3 min"
+    },
     "sections": [
-      { "heading": { "fr": "Une communauté réunie autour de l'IA", "en": "A community gathered around AI" }, "body": { "fr": "J'ai eu la chance de participer à IndabaX Bénin 2026. Cette rencontre a réuni des personnes curieuses, des étudiants, des chercheurs et des professionnels qui partagent un même intérêt : comprendre et faire avancer l'intelligence artificielle sur le continent africain.", "en": "I had the opportunity to attend IndabaX Benin 2026. The event brought together curious people, students, researchers and professionals who share an interest in understanding and advancing artificial intelligence across the African continent." } },
-      { "heading": { "fr": "Apprendre au contact des autres", "en": "Learning from others" }, "body": { "fr": "Au-delà des contenus techniques, l'événement m'a rappelé la valeur des échanges directs. Discuter des parcours, des projets et des défis concrets permet de mieux situer ses propres apprentissages et de voir plus loin que les outils du moment.", "en": "Beyond the technical content, the event reminded me of the value of direct exchange. Discussing journeys, projects and concrete challenges helps put our own learning into perspective and look beyond today's tools." } },
-      { "heading": { "fr": "Ce que je retiens", "en": "What I take away" }, "body": { "fr": "Je repars avec encore plus d'envie de construire dans le machine learning et de continuer à apprendre avec la communauté. Pour moi, les rencontres comme IndabaX sont aussi importantes que la pratique : elles donnent du contexte, des idées et des connexions pour faire évoluer des projets utiles.", "en": "I leave with an even stronger desire to build in machine learning and keep learning with the community. To me, gatherings like IndabaX matter as much as practice: they provide context, ideas and connections for growing useful projects." } }
+      {
+        "heading": {
+          "fr": "Une communauté réunie autour de l'IA",
+          "en": "A community gathered around AI"
+        },
+        "body": {
+          "fr": "J'ai eu la chance de participer à IndabaX Bénin 2026. Cette rencontre a réuni des personnes curieuses, des étudiants, des chercheurs et des professionnels qui partagent un même intérêt : comprendre et faire avancer l'intelligence artificielle sur le continent africain.",
+          "en": "I had the opportunity to attend IndabaX Benin 2026. The event brought together curious people, students, researchers and professionals who share an interest in understanding and advancing artificial intelligence across the African continent."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Apprendre au contact des autres",
+          "en": "Learning from others"
+        },
+        "body": {
+          "fr": "Au-delà des contenus techniques, l'événement m'a rappelé la valeur des échanges directs. Discuter des parcours, des projets et des défis concrets permet de mieux situer ses propres apprentissages et de voir plus loin que les outils du moment.",
+          "en": "Beyond the technical content, the event reminded me of the value of direct exchange. Discussing journeys, projects and concrete challenges helps put our own learning into perspective and look beyond today's tools."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Ce que je retiens",
+          "en": "What I take away"
+        },
+        "body": {
+          "fr": "Je repars avec encore plus d'envie de construire dans le machine learning et de continuer à apprendre avec la communauté. Pour moi, les rencontres comme IndabaX sont aussi importantes que la pratique : elles donnent du contexte, des idées et des connexions pour faire évoluer des projets utiles.",
+          "en": "I leave with an even stronger desire to build in machine learning and keep learning with the community. To me, gatherings like IndabaX matter as much as practice: they provide context, ideas and connections for growing useful projects."
+        }
+      }
+    ]
+  },
+  {
+    "slug": "ingenierie-logicielle-avec-ia-2026",
+    "title": {
+      "fr": "Ingénierie logicielle avec l’IA : l’efficacité ne vient pas du copier-coller",
+      "en": "Software Engineering with AI: Efficiency Does Not Come from Copy-Pasting"
+    },
+    "shortDescription": {
+      "fr": "L’intelligence artificielle peut accélérer la création d’une application, mais sa véritable valeur apparaît seulement lorsqu’elle est utilisée avec méthode, compréhension et responsabilité.",
+      "en": "Artificial intelligence can accelerate application development, but its true value appears only when it is used with method, understanding, and responsibility."
+    },
+    "coverImage": "/content/blog/pexels-code-1839406-1920-1789544785094.jpg",
+    "category": {
+      "fr": "Ingénierie logicielle",
+      "en": "Software Engineering"
+    },
+    "date": {
+      "fr": "16 sept. 2026",
+      "en": "Sep 16, 2026"
+    },
+    "readTime": {
+      "fr": "10 min",
+      "en": "10 min"
+    },
+    "sections": [
+      {
+        "heading": {
+          "fr": "L’IA est un accélérateur, pas un ingénieur autonome",
+          "en": "AI Is an Accelerator, Not an Autonomous Engineer"
+        },
+        "body": {
+          "fr": "L’utilisation de l’intelligence artificielle dans le développement logiciel est devenue extrêmement efficace. En quelques secondes, un développeur peut obtenir une idée d’architecture, un exemple de composant, une requête SQL, un test ou une première version d’une fonctionnalité. Cette rapidité change profondément la manière de construire une application. Pourtant, elle ne transforme pas automatiquement une personne qui copie du code en ingénieur logiciel. L’IA produit des réponses ; elle ne porte pas seule la responsabilité des choix techniques, de la sécurité, de la cohérence du produit ou de sa maintenance.",
+          "en": "Using artificial intelligence in software development has become extremely effective. In seconds, a developer can obtain an architecture idea, a component example, an SQL query, a test, or a first version of a feature. This speed is changing the way applications are built. However, it does not automatically turn someone who copies code into a software engineer. AI produces answers; it does not carry responsibility for technical decisions, security, product coherence, or maintenance on its own."
+        }
+      },
+      {
+        "heading": {
+          "fr": "La majorité copie-colle sans construire une compréhension",
+          "en": "Most People Copy and Paste Without Building Understanding"
+        },
+        "body": {
+          "fr": "Le problème ne vient pas du fait de copier du code. Même les développeurs expérimentés réutilisent des bibliothèques, des exemples et des solutions existantes. La différence se trouve dans ce qui vient avant et après le copier-coller. Une personne qui comprend le besoin, qui sait formuler une demande précise, qui lit la réponse, qui la teste et qui l’adapte transforme une proposition de l’IA en véritable travail d’ingénierie. À l’inverse, copier une solution sans comprendre ses dépendances, ses limites et ses effets secondaires crée une application fragile que l’on ne sait pas réparer dès que le contexte change.",
+          "en": "The problem is not copying code. Even experienced developers reuse libraries, examples, and existing solutions. The difference lies in what happens before and after copying. Someone who understands the need, formulates a precise request, reads the answer, tests it, and adapts it turns an AI suggestion into real engineering work. By contrast, copying a solution without understanding its dependencies, limitations, and side effects creates a fragile application that becomes impossible to fix when the context changes."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Les meilleurs résultats viennent d’une vision complète du produit",
+          "en": "The Best Results Come from a Complete Product Vision"
+        },
+        "body": {
+          "fr": "Les personnes qui obtiennent les meilleurs résultats avec l’IA ne lui demandent pas simplement de produire une page ou quelques lignes de code. Elles prennent en compte l’ensemble du projet. Elles réfléchissent au besoin utilisateur, aux parcours, à l’interface, à l’architecture, aux données, à l’authentification, à la sécurité, aux performances, aux tests, au déploiement et à la maintenance. Cette vision est valable pour une application web, une application mobile ou un système plus complexe. L’IA devient réellement puissante lorsque la personne qui l’utilise sait où elle veut aller et comprend les contraintes du chemin.",
+          "en": "People who get the best results from AI do not simply ask it to produce a page or a few lines of code. They consider the entire project. They think about the user need, user flows, interface, architecture, data, authentication, security, performance, testing, deployment, and maintenance. This applies to web applications, mobile applications, and more complex systems. AI becomes truly powerful when the person using it knows where to go and understands the constraints along the way."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Les abonnements payants ne remplacent pas les compétences",
+          "en": "Paid Subscriptions Do Not Replace Skills"
+        },
+        "body": {
+          "fr": "Il est vrai que les personnes qui avancent le plus vite utilisent souvent des abonnements payants. Elles ont accès à des modèles plus performants, à des limites plus larges, à la génération de fichiers, à l’analyse de projets volumineux ou à des outils spécialisés. Ces avantages peuvent faire une différence réelle lorsqu’il faut travailler sur une application complète. Mais un abonnement ne suffit pas. Un modèle plus puissant peut générer plus de code, mais il peut aussi générer plus rapidement une mauvaise architecture si la demande est vague ou si personne ne vérifie le résultat. Le paiement améliore l’accès à l’outil ; il ne remplace ni la compréhension ni le jugement.",
+          "en": "It is true that people who move fastest often use paid subscriptions. They may access stronger models, larger limits, file generation, analysis of larger projects, or specialized tools. These advantages can make a real difference when working on a complete application. But a subscription is not enough. A more powerful model can generate more code, but it can also generate a poor architecture more quickly when the request is vague or nobody checks the result. Payment improves access to the tool; it does not replace understanding or judgment."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Savoir parler à l’IA, c’est savoir penser son projet",
+          "en": "Knowing How to Talk to AI Means Knowing How to Think About a Project"
+        },
+        "body": {
+          "fr": "Une bonne utilisation de l’IA commence par une bonne formulation du problème. Il faut donner le contexte, préciser l’objectif, décrire les contraintes et indiquer ce qui existe déjà. Il faut ensuite avancer par étapes plutôt que de demander une application entière en une seule phrase. Une demande utile peut commencer par l’architecture, continuer avec le modèle de données, puis traiter une fonctionnalité, ses cas d’erreur et ses tests. Cette progression oblige à clarifier sa pensée. Le prompt n’est donc pas une formule magique : c’est souvent la traduction écrite d’un raisonnement d’ingénieur.",
+          "en": "Effective AI use starts with a well-defined problem. You need to provide context, clarify the goal, describe constraints, and explain what already exists. It is then better to work step by step instead of requesting an entire application in one sentence. A useful request can begin with architecture, continue with the data model, and then address a feature, its error cases, and its tests. This process forces clearer thinking. A prompt is therefore not a magic formula; it is often the written translation of an engineering thought process."
+        }
+      },
+      {
+        "heading": {
+          "fr": "La vérification reste indispensable",
+          "en": "Verification Remains Essential"
+        },
+        "body": {
+          "fr": "Le code généré doit être lu, exécuté, testé et questionné. Une réponse qui semble professionnelle peut contenir une erreur logique, une faille de sécurité, une dépendance obsolète ou une hypothèse incompatible avec le projet. L’ingénieur doit donc vérifier les types, les entrées utilisateur, les permissions, les erreurs réseau, les performances et le comportement dans les situations inattendues. Il doit aussi savoir revenir en arrière et demander une explication plutôt que d’accepter une réponse qu’il ne comprend pas. L’IA peut accélérer la production, mais la qualité dépend toujours de la boucle entre génération, observation et correction.",
+          "en": "Generated code must be read, executed, tested, and questioned. A response that looks professional may contain a logical error, a security vulnerability, an outdated dependency, or an assumption that does not fit the project. Engineers must therefore check types, user input, permissions, network errors, performance, and unexpected situations. They must also be able to step back and ask for an explanation instead of accepting an answer they do not understand. AI can accelerate production, but quality still depends on the loop between generation, observation, and correction."
+        }
+      },
+      {
+        "heading": {
+          "fr": "L’avenir appartient à ceux qui savent collaborer avec les outils",
+          "en": "The Future Belongs to Those Who Can Collaborate with Tools"
+        },
+        "body": {
+          "fr": "L’IA ne supprime pas la nécessité d’apprendre le développement logiciel. Elle rend au contraire les fondamentaux encore plus importants. Comprendre les structures de données, les réseaux, les bases de données, les systèmes, les interfaces et les principes de conception permet de juger une proposition et de l’améliorer. La compétence la plus intéressante n’est pas de mémoriser chaque syntaxe, mais de savoir analyser un problème, prendre une décision, expliquer son choix et vérifier son résultat. Celui qui utilise l’IA ainsi ne se contente pas de demander du code : il construit plus vite, apprend davantage et garde le contrôle de son produit.",
+          "en": "AI does not remove the need to learn software development. It makes the fundamentals even more important. Understanding data structures, networks, databases, systems, interfaces, and design principles makes it possible to judge and improve a suggestion. The most valuable skill is not memorizing every syntax, but analyzing a problem, making a decision, explaining the choice, and verifying the result. Someone who uses AI this way does not merely request code: they build faster, learn more, and remain in control of the product."
+        }
+      }
+    ]
+  },
+  {
+    "slug": "tout-le-monde-peut-etre-un-genie-2026",
+    "title": {
+      "fr": "Tout le monde peut devenir un génie",
+      "en": "Everyone Can Become a Genius"
+    },
+    "shortDescription": {
+      "fr": "Le génie n’est pas toujours un don visible dès le départ : il peut naître de la curiosité, de la discipline, de la confiance et de la volonté de progresser.",
+      "en": "Genius is not always a gift visible from the beginning: it can grow from curiosity, discipline, confidence, and the willingness to improve."
+    },
+    "coverImage": "/content/blog/mohamed-hassan-einstein-8041625-1920-1789544874606.webp",
+    "category": {
+      "fr": "Développement personnel",
+      "en": "Personal Development"
+    },
+    "date": {
+      "fr": "16 sept. 2026",
+      "en": "Sep 16, 2026"
+    },
+    "readTime": {
+      "fr": "9 min",
+      "en": "9 min"
+    },
+    "sections": [
+      {
+        "heading": {
+          "fr": "Le génie ne ressemble pas toujours à ce que l’on imagine",
+          "en": "Genius Does Not Always Look the Way We Imagine"
+        },
+        "body": {
+          "fr": "Quand on parle de génie, on pense souvent à une personne qui comprend tout immédiatement, qui répond sans hésiter et qui semble naturellement supérieure aux autres. Cette image est incomplète. Dans la réalité, beaucoup de personnes brillantes ont commencé avec des doutes, des erreurs et des périodes pendant lesquelles leurs capacités n’étaient pas visibles. Le génie n’est pas seulement une facilité. C’est aussi une manière de regarder un problème, de rester curieux et de continuer à chercher lorsque la première réponse ne fonctionne pas.",
+          "en": "When people talk about genius, they often imagine someone who understands everything immediately, answers without hesitation, and naturally seems superior to others. This image is incomplete. In reality, many brilliant people began with doubts, mistakes, and periods when their abilities were not visible. Genius is not only ease. It is also a way of looking at a problem, staying curious, and continuing to search when the first answer does not work."
+        }
+      },
+      {
+        "heading": {
+          "fr": "La confiance en soi n’est pas l’absence de peur",
+          "en": "Self-Confidence Is Not the Absence of Fear"
+        },
+        "body": {
+          "fr": "Avoir confiance en soi ne signifie pas être certain de réussir à chaque fois. Cela signifie accepter de commencer malgré l’incertitude. La peur de se tromper, d’être jugé ou de ne pas être à la hauteur est normale. Elle devient un obstacle lorsque l’on lui donne le pouvoir de décider à notre place. Une personne confiante peut avoir peur, mais elle avance avec cette peur. Elle sait que l’échec d’une tentative ne constitue pas une preuve définitive de son incapacité.",
+          "en": "Being self-confident does not mean being certain of success every time. It means accepting the decision to begin despite uncertainty. Fear of making mistakes, being judged, or not being good enough is normal. It becomes an obstacle when we let it make decisions for us. A confident person may be afraid, but moves forward with that fear. They understand that one failed attempt is not permanent proof of inability."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Tout le monde possède une forme d’intelligence",
+          "en": "Everyone Has a Form of Intelligence"
+        },
+        "body": {
+          "fr": "Les capacités humaines ne se manifestent pas toutes de la même manière. Certaines personnes excellent dans l’analyse, d’autres dans la création, l’écoute, l’organisation, la communication, la résolution de problèmes ou la compréhension des autres. Une personne peut être discrète en classe et devenir remarquable lorsqu’elle travaille sur un problème qui a du sens pour elle. Elle peut avoir besoin de plus de temps pour apprendre, sans être moins capable. Comparer des parcours différents avec une seule mesure conduit souvent à sous-estimer des talents qui n’ont pas encore trouvé leur contexte.",
+          "en": "Human abilities do not all appear in the same way. Some people excel at analysis, while others stand out in creativity, listening, organization, communication, problem-solving, or understanding others. Someone may be quiet in class and become remarkable when working on a problem that matters to them. They may need more time to learn without being less capable. Comparing different journeys with a single measure often causes us to underestimate talents that have not yet found the right context."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Le potentiel devient visible par la pratique",
+          "en": "Potential Becomes Visible Through Practice"
+        },
+        "body": {
+          "fr": "Le potentiel seul ne suffit pas. Il a besoin d’être transformé en habitudes concrètes. Lire, écrire, expérimenter, poser des questions, construire des projets et recommencer après une erreur donnent une forme réelle aux capacités. Chaque exercice ajoute une petite preuve que l’on est capable d’apprendre. Avec le temps, ces preuves s’accumulent et changent la manière dont on se perçoit. La confiance durable ne vient pas d’une phrase positive répétée sans action ; elle vient de l’expérience d’avoir affronté une difficulté et d’avoir progressé malgré elle.",
+          "en": "Potential alone is not enough. It needs to be transformed into concrete habits. Reading, writing, experimenting, asking questions, building projects, and starting again after a mistake give abilities a real form. Each exercise adds a small piece of evidence that we can learn. Over time, these pieces change the way we see ourselves. Lasting confidence does not come from repeating a positive sentence without action; it comes from facing a difficulty and improving despite it."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Il faut cesser d’attendre la permission d’être capable",
+          "en": "We Must Stop Waiting for Permission to Be Capable"
+        },
+        "body": {
+          "fr": "Beaucoup de personnes attendent un signe extérieur avant de se considérer comme légitimes. Elles attendent le diplôme, le compliment, le premier emploi ou la validation d’une personne reconnue. Ces éléments peuvent aider, mais ils ne doivent pas être les conditions pour commencer. On devient souvent crédible en travaillant avant de se sentir totalement prêt. Il est possible d’apprendre publiquement, de montrer une première version imparfaite et de demander des retours. La légitimité se construit alors progressivement, par les actes et non par l’attente.",
+          "en": "Many people wait for an external sign before considering themselves legitimate. They wait for a degree, a compliment, a first job, or validation from a recognized person. These things can help, but they should not be requirements for starting. We often become credible by working before feeling completely ready. It is possible to learn in public, show an imperfect first version, and ask for feedback. Legitimacy is then built gradually through action rather than waiting."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Les comparaisons cachent le travail des autres",
+          "en": "Comparisons Hide Other People’s Work"
+        },
+        "body": {
+          "fr": "Nous comparons souvent notre début au résultat visible d’une autre personne. Nous voyons son projet terminé, son assurance et ses réussites, mais nous ne voyons pas les heures d’apprentissage, les refus, les erreurs et les périodes de doute qui ont précédé. Cette comparaison produit une conclusion injuste : les autres seraient naturellement doués tandis que nous serions en retard. Il est plus utile de comparer sa situation actuelle à celle d’il y a quelques mois. Cette mesure révèle les progrès réels et donne une direction plus honnête.",
+          "en": "We often compare our beginning with another person’s visible result. We see their finished project, confidence, and successes, but not the hours of learning, rejections, mistakes, and periods of doubt that came first. This comparison produces an unfair conclusion: others must be naturally gifted while we are behind. It is more useful to compare the present with where we were a few months ago. This measure reveals real progress and provides a more honest direction."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Devenir un génie, c’est développer sa manière de contribuer",
+          "en": "Becoming a Genius Means Developing Your Way of Contributing"
+        },
+        "body": {
+          "fr": "Être un génie ne devrait pas être compris comme le fait de dominer les autres ou de tout savoir. C’est plutôt développer une capacité singulière à comprendre, créer, résoudre ou transmettre quelque chose d’utile. Cette capacité peut apparaître dans la technologie, l’art, la science, l’entrepreneuriat, l’éducation ou dans une relation humaine. La question n’est donc pas seulement : « Suis-je assez intelligent ? » Elle peut devenir : « Quel problème me donne envie de progresser, et quelle contribution puis-je construire avec le temps ? » Cette question ouvre un chemin au lieu de fermer une porte.",
+          "en": "Being a genius should not mean dominating others or knowing everything. It should mean developing a unique ability to understand, create, solve, or teach something useful. This ability can appear in technology, art, science, entrepreneurship, education, or human relationships. The question is therefore not only, “Am I intelligent enough?” It can become, “What problem makes me want to improve, and what contribution can I build over time?” This question opens a path instead of closing a door."
+        }
+      },
+      {
+        "heading": {
+          "fr": "La confiance se construit une décision à la fois",
+          "en": "Confidence Is Built One Decision at a Time"
+        },
+        "body": {
+          "fr": "Tout le monde peut développer une forme de génie, mais personne ne peut le faire à notre place. Il faut accepter de commencer petit, de travailler régulièrement et de laisser les résultats prendre du temps. Une décision courageuse peut consister à poser une question, publier un projet, apprendre une compétence ou recommencer après une déception. Ces décisions ne semblent pas toujours extraordinaires lorsqu’elles sont prises. Pourtant, elles forment progressivement une identité : celle d’une personne qui apprend, qui agit et qui refuse de réduire son avenir à ses difficultés présentes.",
+          "en": "Everyone can develop a form of genius, but nobody can do it for us. We must accept starting small, working consistently, and allowing results to take time. One courageous decision may be asking a question, publishing a project, learning a skill, or starting again after disappointment. These decisions may not look extraordinary when they are made. Yet they gradually shape an identity: that of someone who learns, acts, and refuses to reduce their future to present difficulties."
+        }
+      }
     ]
   }
 ]
