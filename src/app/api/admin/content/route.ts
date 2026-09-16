@@ -73,6 +73,12 @@ function validate(collection: ContentCollection, item: unknown): string | null {
     if (!Array.isArray(value.points) || value.points.length !== 4 || value.points.some((point) => !String(point).trim())) {
       return "Une certification doit contenir exactement quatre points.";
     }
+    if (value.containedCertificationIds !== undefined && (!Array.isArray(value.containedCertificationIds) || value.containedCertificationIds.some((id) => !String(id).trim()))) {
+      return "La liste des certifications incluses est invalide.";
+    }
+    if (value.specializationId !== undefined && !String(value.specializationId).trim()) {
+      return "La spécialisation parente est invalide.";
+    }
   }
 
   if (collection === "blog-posts" && (!Array.isArray(value.sections) || value.sections.length === 0)) {
