@@ -21,7 +21,7 @@ const blankStore: ContentStore = {
 
 function emptyDraft(collection: ContentCollection): Draft {
   if (collection === "certifications") {
-    return { id: "", title: "", subtitle: "", logo: "", kind: "certification", points: ["", "", "", ""], issuer: "", obtainedAt: "", certificateImage: "", verifyUrl: "", featured: false };
+    return { id: "", title: "", subtitle: "", logo: "", kind: "certification", points: ["", "", "", ""], issuer: "", obtainedAt: "", certificateImage: "", verifyUrl: "", featured: false, containedCertificationIds: [], specializationId: "" };
   }
   if (collection === "projects") {
     return { slug: "", title: "", shortDescription: "", year: "", category: "", image: "", problem: "", solution: "", audience: "", resolution: "", stack: "", liveUrl: "", githubUrl: "" };
@@ -48,6 +48,7 @@ function cleanDraft(collection: ContentCollection, draft: Draft): unknown {
   const cleaned = { ...draft };
   for (const key of Object.keys(cleaned)) {
     if (cleaned[key] === "") delete cleaned[key];
+    if (Array.isArray(cleaned[key]) && cleaned[key].length === 0) delete cleaned[key];
   }
   return cleaned;
 }
@@ -139,6 +140,7 @@ export default function ContentStudio() {
 
   const items = store[collection] as unknown[];
   const categories = useMemo(() => store["blog-categories"], [store]);
+  const certifications = useMemo(() => store.certifications, [store]);
 
   const refresh = async () => {
     const response = await fetch("/api/admin/content", { cache: "no-store" });
@@ -232,6 +234,27 @@ export default function ContentStudio() {
                 <Field label="Identifiant" value={String(draft.id || "")} onChange={(value) => update("id", value)} required placeholder="aws-architect" />
                 <label className="admin-field"><span>Type *</span><select value={String(draft.kind)} onChange={(event) => update("kind", event.target.value)}><option value="certification">Certification</option><option value="specialization">Spécialisation</option></select></label>
               </div>
+              {draft.kind === "specialization" && (
+                <fieldset className="admin-relations">
+                  <legend>Certifications incluses (facultatif)</legend>
+                  <p>Choisis les certifications existantes à afficher dans la colonne de droite.</p>
+                  {certifications.filter((item) => item.kind === "certification" && item.id !== draft.id).length === 0 ? (
+                    <span>Aucune certification simple à associer pour le moment.</span>
+                  ) : certifications.filter((item) => item.kind === "certification" && item.id !== draft.id).map((item) => {
+                    const selected = (draft.containedCertificationIds as string[] || []).includes(item.id);
+                    return <label key={item.id} className="admin-relation-option"><input type="checkbox" checked={selected} onChange={(event) => update("containedCertificationIds", event.target.checked ? [...(draft.containedCertificationIds as string[] || []), item.id] : (draft.containedCertificationIds as string[] || []).filter((id) => id !== item.id))} /> <span>{item.title}</span></label>;
+                  })}
+                </fieldset>
+              )}
+              {draft.kind === "certification" && (
+                <label className="admin-field">
+                  <span>Spécialisation parente (facultatif)</span>
+                  <select value={String(draft.specializationId || "")} onChange={(event) => update("specializationId", event.target.value)}>
+                    <option value="">Aucune</option>
+                    {certifications.filter((item) => item.kind === "specialization" && item.id !== draft.id).map((item) => <option key={item.id} value={item.id}>{item.title}</option>)}
+                  </select>
+                </label>
+              )}
               <Field label="Titre" value={String(draft.title || "")} onChange={(value) => update("title", value)} required />
               <Field label="Sous-titre" value={String(draft.subtitle || "")} onChange={(value) => update("subtitle", value)} required />
               <MediaField label="Logo" value={String(draft.logo || "")} folder="certifications" onChange={(value) => update("logo", value)} required />
