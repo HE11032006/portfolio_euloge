@@ -15,8 +15,10 @@ export default function LocaleProvider({ children, initialLocale = defaultLocale
   const locale = isLocale(pathLocale) ? pathLocale : storedLocale;
 
   useEffect(() => {
-    const saved = window.localStorage.getItem("portfolio-locale");
-    if (isLocale(saved || undefined)) setStoredLocale(saved as Locale);
+    queueMicrotask(() => {
+      const saved = window.localStorage.getItem("portfolio-locale");
+      if (isLocale(saved || undefined)) setStoredLocale(saved as Locale);
+    });
     document.documentElement.lang = locale;
     document.cookie = `portfolio-locale=${locale}; path=/; max-age=31536000; samesite=lax`;
   }, [locale]);
