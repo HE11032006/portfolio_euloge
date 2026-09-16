@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const TABS = [
   { id: "parcours", label: "Parcours" },
@@ -173,6 +175,23 @@ export default function AboutScrollyCard() {
                 </ul>
               </motion.div>
             </div>
+
+            <a
+              href="/CV_Euloge_HOUESSOU.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="about-pin__cv"
+            >
+              <HoverBorderGradient
+                as="span"
+                containerClassName="certs__gradient-btn"
+                className="certs__gradient-content"
+                duration={1.8}
+              >
+                <span>Voir le CV</span>
+                <ArrowUpRight aria-hidden="true" />
+              </HoverBorderGradient>
+            </a>
           </div>
         </motion.div>
       </div>
