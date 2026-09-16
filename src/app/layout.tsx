@@ -7,13 +7,17 @@ import SiteLoader from "@/components/site-loader";
 import LocaleProvider from "@/components/locale-provider";
 import { Geist } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { getLocale } from "@/lib/i18n-server";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
-export const metadata: Metadata = {
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
   title: "Euloge HOUESSOU",
-  description:
-    "Portfolio d’Euloge HOUESSOU, passionné par le machine learning, la recherche sémantique, le développement web et mobile.",
+  description: locale === "fr"
+    ? "Portfolio d’Euloge HOUESSOU, passionné par le machine learning, la recherche sémantique, le développement web et mobile."
+    : "Portfolio of Euloge HOUESSOU, passionate about machine learning, semantic search, web and mobile development.",
   keywords: [
     "HOUESSOU Euloge",
     "Machine learning",
@@ -28,11 +32,12 @@ export const metadata: Metadata = {
     shortcut: "/logo-sombre.png",
     apple: "/logo-sombre.png",
   },
-};
+  };
+}
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={cn("scroll-smooth", "font-sans", geist.variable)}>
+    <html lang="fr" data-scroll-behavior="smooth" className={cn("scroll-smooth", "font-sans", geist.variable)}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
