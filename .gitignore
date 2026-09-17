@@ -46,3 +46,6 @@ next-env.d.ts
 /CV_Euloge_HOUESSOU.pdf
 /content/Nouveau dossier/
 /scripts/commit-each.ps1
+.open-next/
+.wrangler/
+
