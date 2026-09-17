@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { useLocale } from "@/components/locale-provider";
 
 const socialLinks = [
@@ -72,6 +74,7 @@ const socialLinks = [
 export default function SiteFooter() {
   const pathname = usePathname();
   const { t, href } = useLocale();
+  const [contactsHighlighted, setContactsHighlighted] = useState(false);
   const navLinks = [
     { label: t.nav.about, href: href("/about") },
     { label: t.nav.work, href: href("/work") },
@@ -79,6 +82,10 @@ export default function SiteFooter() {
     { label: t.nav.contact, href: "#contact" },
     { label: t.nav.resume, href: href("/resume") },
   ];
+
+  useEffect(() => setContactsHighlighted(false), [pathname]);
+
+  const highlightContacts = () => setContactsHighlighted(true);
 
   return (
     <footer
@@ -141,7 +148,7 @@ export default function SiteFooter() {
               transition: "color 0.2s ease",
             };
             return item.href === "#contact" ? (
-              <button key={item.label} type="button" style={style} className="footer-contact-trigger hover:!text-white" onClick={() => window.dispatchEvent(new Event("open-contact-menu"))}>
+              <button key={item.label} type="button" style={style} className="footer-contact-trigger hover:!text-white" onClick={highlightContacts}>
                 {t.nav.contact}
               </button>
             ) : (
@@ -154,6 +161,7 @@ export default function SiteFooter() {
 
         {/* 3. SOCIAL ICONS ROW */}
         <div
+          className={`footer-social-links${contactsHighlighted ? " is-highlighted" : ""}`}
           style={{
             display: "flex",
             alignItems: "center",
@@ -161,6 +169,7 @@ export default function SiteFooter() {
             gap: 20,
           }}
         >
+          {contactsHighlighted && <motion.svg className="footer-social-links__sketch" viewBox="0 0 1200 210" preserveAspectRatio="none" initial="hidden" animate="visible" aria-hidden="true"><motion.path d="M 1015 34 C 1125 55, 1140 151, 1005 177 C 790 205, 405 205, 195 177 C 65 160, 58 61, 190 35 C 410 3, 790 3, 1015 34 C 1050 39, 1070 51, 1080 67" fill="none" stroke="currentColor" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" variants={{ hidden: { pathLength: 0, opacity: 0 }, visible: { pathLength: 1, opacity: 1, transition: { pathLength: { duration: 2.2, ease: [0.43, 0.13, 0.23, 0.96] }, opacity: { duration: 0.35 } } } }} /></motion.svg>}
           {socialLinks.map((social) => (
             <a
               key={social.name}

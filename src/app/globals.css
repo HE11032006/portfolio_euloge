@@ -1767,6 +1767,28 @@ img {
   text-decoration: none;
 }
 
+.footer-social-links {
+  position: relative;
+  isolation: isolate;
+  margin: 8px 0;
+  padding: 22px 36px;
+}
+
+.footer-social-links__sketch {
+  position: absolute;
+  z-index: -1;
+  inset: -9px -16px;
+  width: calc(100% + 32px);
+  height: calc(100% + 18px);
+  overflow: visible;
+  color: rgba(244, 241, 234, .94);
+  pointer-events: none;
+}
+
+.footer-social-links__sketch path {
+  filter: drop-shadow(0 0 2px rgba(244, 241, 234, .2));
+}
+
 .certs-page__header h1 {
   margin: 0;
   font-family: 'Bebas Neue', Impact, sans-serif;
