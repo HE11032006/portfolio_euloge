@@ -1770,8 +1770,8 @@ img {
 .footer-social-links {
   position: relative;
   isolation: isolate;
-  margin: 8px 0;
-  padding: 22px 36px;
+  margin: 10px 0;
+  padding: 28px 48px;
 }
 
 .footer-social-links__sketch {
