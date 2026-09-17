@@ -616,7 +616,7 @@ img {
   .reference-mobile-menu {
     position: fixed;
     inset: 0;
-    z-index: 45;
+    z-index: 100;
     display: flex;
     align-items: flex-end;
     padding: 10px;
