@@ -77,6 +77,9 @@ function validate(collection: ContentCollection, item: CollectionItem) {
     ) {
       return "Une certification doit contenir exactement quatre points.";
     }
+    if (record.cardTheme !== undefined && record.cardTheme !== "light" && record.cardTheme !== "dark") {
+      return "La couleur de la carte doit être claire ou sombre.";
+    }
   }
 
   if (collection === "blog-posts" && (!Array.isArray(record.sections) || !record.sections.length)) {
@@ -84,6 +87,11 @@ function validate(collection: ContentCollection, item: CollectionItem) {
   }
 
   return null;
+}
+
+function validateAboutSelection(items: CollectionItem[]) {
+  const count = items.filter((item) => (item as Certification).featured).length;
+  return count >= 5 ? null : "La page About doit exposer au moins cinq certifications ou spécialisations.";
 }
 
 export async function GET(request: Request) {
@@ -106,6 +114,11 @@ export async function POST(request: Request) {
     return Response.json({ error: "Cet identifiant existe déjà." }, { status: 409 });
   }
 
+  if (body.collection === "certifications") {
+    const selectionError = validateAboutSelection([...items, item]);
+    if (selectionError) return Response.json({ error: selectionError }, { status: 400 });
+  }
+
   items.push(item);
   await save(body.collection, items);
   return Response.json({ ok: true, item }, { status: 201 });
@@ -124,6 +137,13 @@ export async function PUT(request: Request) {
   const index = items.findIndex((entry) => key(body.collection, entry) === body.key);
   if (index < 0) return Response.json({ error: "Contenu introuvable." }, { status: 404 });
 
+  const nextItems = [...items];
+  nextItems[index] = item;
+  if (body.collection === "certifications") {
+    const selectionError = validateAboutSelection(nextItems);
+    if (selectionError) return Response.json({ error: selectionError }, { status: 400 });
+  }
+
   items[index] = item;
   await save(body.collection, items);
   return Response.json({ ok: true, item });
@@ -137,6 +157,10 @@ export async function DELETE(request: Request) {
   const items = await read(body.collection);
   const next = items.filter((entry) => key(body.collection, entry) !== body.key);
   if (next.length === items.length) return Response.json({ error: "Contenu introuvable." }, { status: 404 });
+  if (body.collection === "certifications") {
+    const selectionError = validateAboutSelection(next);
+    if (selectionError) return Response.json({ error: selectionError }, { status: 400 });
+  }
 
   await save(body.collection, next);
   return Response.json({ ok: true });

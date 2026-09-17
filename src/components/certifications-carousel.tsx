@@ -11,7 +11,7 @@ import CertificationViewer from "@/components/certification-viewer";
 import { useLocale } from "@/components/locale-provider";
 import { localized } from "@/lib/i18n-core";
 
-export default function CertificationsCarousel({ certifications }: { certifications: Certification[] }) {
+export default function CertificationsCarousel({ certifications, allCertifications = certifications }: { certifications: Certification[]; allCertifications?: Certification[] }) {
   const { locale, t, href } = useLocale();
   const scrollRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef({ pointerId: -1, startX: 0, scrollLeft: 0, moved: false });
@@ -90,8 +90,8 @@ export default function CertificationsCarousel({ certifications }: { certificati
               suppressClickRef.current = false;
             }}
           >
-            {certifications.map((cert, index) => {
-              const dark = Boolean(cert.featured) || index === 0;
+            {certifications.map((cert) => {
+              const dark = cert.cardTheme === "dark";
               const title = localized(cert.title, locale);
 
               return (
@@ -211,7 +211,7 @@ export default function CertificationsCarousel({ certifications }: { certificati
         {open && (
           <CertificationViewer
             cert={open}
-            certifications={certifications}
+                certifications={allCertifications}
             onClose={() => setOpen(null)}
             onSelect={setOpen}
           />

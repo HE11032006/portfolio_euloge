@@ -2,6 +2,7 @@ import type { LocalizedText } from "@/lib/i18n-core";
 
 export type { LocalizedText };
 export type CertificationKind = "certification" | "specialization";
+export type CertificationCardTheme = "light" | "dark";
 
 export type Certification = {
   id: string;
@@ -15,6 +16,7 @@ export type Certification = {
   certificateImage?: string;
   verifyUrl?: string;
   featured?: boolean;
+  cardTheme?: CertificationCardTheme;
   containedCertificationIds?: string[];
   specializationId?: string;
 };

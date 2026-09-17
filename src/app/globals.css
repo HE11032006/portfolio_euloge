@@ -964,9 +964,9 @@ img {
 .about-pin__lead {
   margin: 0 0 36px;
   max-width: 36ch;
-  color: rgba(237, 233, 226, 0.72);
-  font-size: clamp(16px, 1.6vw, 20px);
-  line-height: 1.45;
+  color: rgba(237, 233, 226, 0.9);
+  font-size: clamp(18px, 1.8vw, 23px);
+  line-height: 1.4;
 }
 
 .about-pin__list,
@@ -996,14 +996,15 @@ img {
 .about-pin__infos p {
   color: #ede9e2;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(15px, 1.5vw, 18px);
-  font-weight: 600;
+  font-size: clamp(17px, 1.7vw, 21px);
+  font-weight: 650;
   letter-spacing: -0.02em;
 }
 
 .about-pin__row span {
-  color: rgba(237, 233, 226, 0.4);
-  font-size: 13px;
+  color: rgba(237, 233, 226, 0.78);
+  font-size: clamp(14px, 1.35vw, 17px);
+  font-weight: 600;
   white-space: nowrap;
 }
 
@@ -1011,9 +1012,9 @@ img {
 .about-pin__awards p {
   margin: 6px 0 0;
   max-width: 52ch;
-  color: rgba(237, 233, 226, 0.55);
-  font-size: 14px;
-  line-height: 1.5;
+  color: rgba(237, 233, 226, 0.8);
+  font-size: clamp(15px, 1.45vw, 18px);
+  line-height: 1.55;
 }
 
 .about-pin__stack {
@@ -1112,13 +1113,12 @@ img {
   overflow-x: auto;
   padding: 0 var(--certs-gutter) 8px;
   cursor: grab;
-  scroll-snap-type: x mandatory;
+  touch-action: pan-y;
   scrollbar-width: none;
 }
 
 .certs__track.is-dragging {
   cursor: grabbing;
-  scroll-snap-type: none;
   user-select: none;
 }
 
@@ -1751,6 +1751,16 @@ img {
 }
 
 .certs-page__back {
+  display: inline-flex;
+  margin-bottom: 28px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.resume-cv__back {
+  position: sticky;
+  top: 88px;
+  z-index: 45;
   display: inline-flex;
   margin-bottom: 28px;
   color: inherit;

@@ -44,7 +44,8 @@
       "mathematics-for-machine-learning-linear-algebra-2026",
       "mathematics-for-machine-learning-multivariate-calculus-2026",
       "mathematics-for-machine-learning-pca-2026"
-    ]
+    ],
+    "cardTheme": "dark"
   },
   {
     "id": "software-engineering-hkust-2026",
@@ -86,7 +87,7 @@
     },
     "certificateImage": "/content/certifications/certificate-landing-page-5ey9ow0cqmdz-1789541700449.webp",
     "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/5EY9OW0CQMDZ",
-    "featured": false,
+    "featured": true,
     "containedCertificationIds": [
       "software-engineering-modeling-uml-2026",
       "software-engineering-implementation-testing-2026",
@@ -133,7 +134,7 @@
     },
     "certificateImage": "/content/certifications/1777283353326-1789544596491.jpg",
     "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/EJTRQIMAVJJL",
-    "featured": false,
+    "featured": true,
     "containedCertificationIds": [
       "programming-for-everybody-python-2026",
       "python-data-structures-2026",
@@ -308,7 +309,7 @@
     },
     "certificateImage": "/content/certifications/dev-agile-1789544539849.webp",
     "verifyUrl": "https://www.coursera.org/account/accomplishments/verify/Z7T8NLTRV0QY",
-    "featured": false
+    "featured": true
   },
   {
     "id": "web-applications-for-everybody-2026",
@@ -350,7 +351,7 @@
     },
     "certificateImage": "/content/certifications/web-for-1789544506418.jpg",
     "verifyUrl": "https://www.coursera.org/account/accomplishments/specialization/M82FSN9V43M3",
-    "featured": false,
+    "featured": true,
     "containedCertificationIds": [
       "building-web-applications-in-php-2026",
       "introduction-to-sql-2026",
@@ -440,7 +441,7 @@
     },
     "certificateImage": "/content/certifications/associate-data-analyst-1789544488554.webp",
     "verifyUrl": "https://www.datacamp.com/statement-of-accomplishment/verify/DAA0011640532115",
-    "featured": false
+    "featured": true
   },
   {
     "id": "mathematics-for-machine-learning-linear-algebra-2026",
