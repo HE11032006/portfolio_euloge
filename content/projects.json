@@ -16,16 +16,16 @@
     },
     "image": "/content/projects/everycli-photo-1789538477965.webp",
     "problem": {
-      "fr": "Trouver une commande Git, Docker ou Linux peut casser le rythme de travail : il faut souvent quitter le terminal, chercher en ligne, puis vérifier la syntaxe.",
-      "en": "Finding a Git, Docker or Linux command can break the workflow: you often need to leave the terminal, search online, and verify the syntax."
+      "fr": "Trouver une commande Git, Docker, Linux ou script shell ou meme ssh peut casser le rythme de travail : il faut souvent quitter le terminal, chercher en ligne, demander aux llms. On attends souvent quelques secondes, en tout cas suffisant pour switcher vers une autre tache ou perdre le focus.",
+      "en": "Finding a Git, Docker, Linux or shell script command can break the workflow: you often need to leave the terminal, search online, ask the llms. We  often need to wait a few seconds, which is enough time to switch to another task or lose focus."
     },
     "solution": {
-      "fr": "EveryCli permet de décrire son intention en français ou en anglais. Il combine une recherche lexicale et sémantique pour proposer les commandes les plus pertinentes, directement dans le terminal.",
-      "en": "EveryCli lets you describe your intent in French or English. It combines lexical and semantic search to suggest the most relevant commands directly in the terminal."
+      "fr": "EveryCli donne la possiblité à l'utilisateur de décrire la commande qu'il recherche (ca peut etre en git, en docker, en ssh, en composer, en bash et bien d'autres si vous configurer vos propres commandes) en français ou en anglais. Il combine une recherche lexicale et sémantique pour proposer les commandes les plus pertinentes, directement dans le terminal en moins de 100ms sur windows et de 20 ms sur linux.",
+      "en": "EveryCli give you the possibility to describe the command you are looking for (it can be in git, in docker, in ssh, in composer, in bash and many more if you configure your own commands) in French or English. It combines lexical and semantic search to suggest the most relevant commands directly in the terminal in less than 100ms on Windows and 20ms on Linux."
     },
     "audience": {
-      "fr": "Pensé pour les développeurs et power users, les personnes qui travaillent hors ligne ou accordent de l'importance à la confidentialité, ainsi que les utilisateurs Linux et Windows.",
-      "en": "Designed for developers and power users, people who work offline or value privacy, and Linux and Windows users."
+      "fr": "Pensé pour les développeurs et power users, les personnes qui travaillent hors ligne ou accordent de l'importance à la confidentialité, ainsi que les utilisateurs Linux et Windows qui aime travailler dans le terminal.",
+      "en": "Designed for developers and power users, people who work offline or value privacy, and Linux and Windows users who like to work in the terminal."
     },
     "resolution": {
       "fr": "Le client Rust dialogue en JSON/TCP avec un daemon local. Le daemon conserve le modèle ONNX en mémoire, interroge un corpus YAML, puis associe recherche lexicale et re-ranking sémantique. Si le daemon est indisponible, une recherche lexicale déterministe prend le relais. Aucune commande ne s'exécute sans confirmation explicite.",
