@@ -183,7 +183,8 @@
     },
     "verifyUrl": "https://www.coursera.org/verify/professional-cert/Y8OF5LFOKSQG",
     "featured": true,
-    "containedCertificationIds": []
+    "containedCertificationIds": [],
+    "certificateImage": "/content/certifications/ibm-data-science-1791306552523.webp"
   },
   {
     "id": "getting-started-with-git-and-github-2026",

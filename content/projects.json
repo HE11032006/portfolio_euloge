@@ -67,8 +67,8 @@
       "en": "Students, recent graduates, and applicants looking for training, funding, or career opportunities."
     },
     "resolution": {
-      "fr": "Le dépôt est structuré en plusieurs couches — frontend, backend, contracts, infrastructure et scripts — avec une documentation de progression et de projet. Cette séparation indique une architecture modulaire orientée produit, dans laquelle la collecte et le suivi des opportunités sont séparés des interfaces et de l’infrastructure afin de faciliter les évolutions.",
-      "en": "The repository is structured into multiple layers — frontend, backend, contracts, infrastructure, and scripts — with project and progress documentation. This separation reflects a modular, product-oriented architecture in which opportunity collection and tracking are separated from the interfaces and infrastructure to support future evolution."
+      "fr": "Le dépôt est structuré en plusieurs couches frontend, backend, contracts, infrastructure et scripts avec une documentation de progression et de projet. Cette séparation indique une architecture modulaire orientée produit, dans laquelle la collecte et le suivi des opportunités sont séparés des interfaces et de l’infrastructure afin de faciliter les évolutions.",
+      "en": "The repository is structured into multiple layers frontend, backend, contracts, infrastructure, and scripts with project and progress documentation. This separation reflects a modular, product-oriented architecture in which opportunity collection and tracking are separated from the interfaces and infrastructure to support future evolution."
     },
     "stack": {
       "fr": "Vite.js · React · TypeScript · Python · AWS · Amazon Bedrock · Electron",
