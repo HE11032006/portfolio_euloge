@@ -144,6 +144,48 @@
     ]
   },
   {
+    "id": "ibm-data-science-2026",
+    "title": {
+      "fr": "IBM Data Science",
+      "en": "IBM Data Science"
+    },
+    "subtitle": {
+      "fr": "Certificat professionnel IBM (12 cours) : Python, SQL, analyse de données, visualisation et machine learning, avec projets de portfolio.",
+      "en": "IBM Professional Certificate (12 courses): Python, SQL, data analysis, visualization, and machine learning, with portfolio projects."
+    },
+    "logo": "/content/certifications/ibm-logo-1789542161594.jpg",
+    "kind": "specialization",
+    "points": [
+      {
+        "fr": "Python, Jupyter et bibliothèques data (Pandas, NumPy)",
+        "en": "Python, Jupyter, and data libraries (Pandas, NumPy)"
+      },
+      {
+        "fr": "SQL et bases de données pour la science des données",
+        "en": "SQL and databases for data science"
+      },
+      {
+        "fr": "Visualisation de données et tableaux de bord",
+        "en": "Data visualization and dashboards"
+      },
+      {
+        "fr": "Machine learning et projet capstone appliqué",
+        "en": "Machine learning and applied capstone project"
+      }
+    ],
+    "issuer": {
+      "fr": "IBM via Coursera",
+      "en": "IBM via Coursera"
+    },
+    "obtainedAt": {
+      "fr": "septembre 2026",
+      "en": "September 2026"
+    },
+    "verifyUrl": "https://www.coursera.org/verify/professional-cert/Y8OF5LFOKSQG",
+    "featured": true,
+    "containedCertificationIds": []
+  },
+  {
     "id": "getting-started-with-git-and-github-2026",
     "title": {
       "fr": "Getting Started with Git and GitHub",
@@ -398,7 +440,7 @@
       "en": "February 2026"
     },
     "certificateImage": "/content/certifications/certif-python-data-asscoiate-1789544473067.webp",
-    "verifyUrl": "https://www.datacamp.com/statement-of-accomplishment/verify/PDA0019287223078",
+    "verifyUrl": "https://www.datacamp.com/certificate/PDA0019287223078",
     "featured": false
   },
   {
@@ -440,7 +482,7 @@
       "en": "February 2026"
     },
     "certificateImage": "/content/certifications/associate-data-analyst-1789544488554.webp",
-    "verifyUrl": "https://www.datacamp.com/statement-of-accomplishment/verify/DAA0011640532115",
+    "verifyUrl": "https://www.datacamp.com/certificate/DAA0011640532115",
     "featured": true
   },
   {
