@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import Link from "next/link";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
@@ -77,5 +78,5 @@ export default function AboutScrollyCard() {
     {panel(1, <><p className="about-pin__lead">{t.about.experienceLead}</p><ul className="about-pin__list">{experience.map((item) => <li key={item.role}><div className="about-pin__row"><strong>{item.role}</strong><span>{item.period}</span></div><p>{item.org} : {item.desc}</p></li>)}</ul></>)}
     {panel(2, <ul className="about-pin__stack">{stacks.map((item) => <li key={item.cat}><span>{item.cat}</span><p className="about-pin__skills">{item.items.map((skill, index) => <span key={skill}>{index > 0 && <i aria-hidden="true">•</i>}{skill}</span>)}</p></li>)}</ul>)}
     {panel(3, <ul className="about-pin__infos">{infos.map((item) => <li key={item.label}><span>{item.label}</span><p>{item.value}</p></li>)}</ul>)}
-  </div><a href={href("/resume")} target="_blank" rel="noreferrer" className="about-pin__cv"><HoverBorderGradient as="span" containerClassName="certs__gradient-btn" className="certs__gradient-content" duration={1.8}><span>{t.about.cv}</span><ArrowUpRight /></HoverBorderGradient></a></div></motion.div></div></div>;
+  </div><Link href={href("/resume")} className="about-pin__cv"><HoverBorderGradient as="span" containerClassName="certs__gradient-btn" className="certs__gradient-content" duration={1.8}><span>{t.about.cv}</span><ArrowUpRight /></HoverBorderGradient></Link></div></motion.div></div></div>;
 }
