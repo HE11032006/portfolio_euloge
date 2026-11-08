@@ -1998,7 +1998,30 @@ img {
 .resume-cv__header { max-width: 620px; }
 .resume-cv__header .type-meta { color: rgba(237, 233, 226, 0.48); }
 .resume-cv__header .type-sub { color: rgba(237, 233, 226, 0.68); }
-.resume-cv__actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 32px 0 24px; }
+.resume-cv__language {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 28px;
+  color: rgba(237, 233, 226, 0.56);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.resume-cv__language button {
+  min-width: 44px;
+  border: 1px solid rgba(244, 241, 234, 0.16);
+  background: transparent;
+  color: inherit;
+  padding: 7px 12px;
+  cursor: pointer;
+}
+.resume-cv__language button.is-active {
+  background: #f4f1ea;
+  border-color: #f4f1ea;
+  color: #111;
+}
+.resume-cv__actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 24px; }
 .resume-cv__actions a { display: inline-flex; color: inherit; text-decoration: none; }
 .resume-cv__viewer { width: 100%; min-height: 760px; border: 1px solid rgba(244, 241, 234, 0.16); background: #fff; }
 
