@@ -958,7 +958,7 @@ img {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
 }
 
 .about-pin__lead {
@@ -992,7 +992,6 @@ img {
 }
 
 .about-pin__row strong,
-.about-pin__stack p,
 .about-pin__infos p {
   color: #ede9e2;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -1020,10 +1019,22 @@ img {
 .about-pin__stack {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 24px;
 }
 
-.about-pin__stack > li > span,
+.about-pin__stack ul { list-style: none; margin: 0; padding: 0; }
+
+/* Titres de catégorie : plus grands et bien visibles */
+.about-pin__stack > li > span {
+  display: block;
+  margin-bottom: 12px;
+  color: #ede9e2;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .about-pin__infos span {
   display: block;
   margin-bottom: 6px;
@@ -1037,16 +1048,35 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px 9px;
+  gap: 8px;
 }
 
-.about-pin__skills > span { display: inline-flex; align-items: center; gap: 9px; }
+.about-pin__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(237, 233, 226, 0.16);
+  color: #ede9e2;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
 
-.about-pin__skills i {
-  color: rgba(237, 233, 226, .72);
-  font-size: 16px;
-  font-style: normal;
-  line-height: 1;
+.about-pin__chip svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  color: rgba(237, 233, 226, 0.92);
+}
+
+.about-pin__chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(237, 233, 226, 0.32);
+  transform: translateY(-1px);
 }
 
 .about-pin__awards {
@@ -1952,16 +1982,15 @@ img {
   .about-pin__list { gap: 18px; }
   .about-pin__row { display: block; }
   .about-pin__row strong,
-  .about-pin__stack p,
   .about-pin__infos p { font-size: clamp(14px, 3.8vw, 16px); }
   .about-pin__row span { display: block; margin-top: 5px; font-size: 11px; }
   .about-pin__list p { margin-top: 5px; font-size: 12px; line-height: 1.42; }
   .about-pin__stack { gap: 16px; }
-  .about-pin__stack > li > span,
+  .about-pin__stack > li > span { margin-bottom: 8px; font-size: 13px; }
   .about-pin__infos span { margin-bottom: 3px; font-size: 10px; }
-  .about-pin__skills { gap: 3px 7px; }
-  .about-pin__skills > span { gap: 7px; }
-  .about-pin__skills i { font-size: 12px; }
+  .about-pin__skills { gap: 6px; }
+  .about-pin__chip { padding: 5px 9px; font-size: 12px; border-radius: 8px; }
+  .about-pin__chip svg { width: 13px; height: 13px; }
   .about-pin__infos { gap: 14px; }
   .about-pin__infos li { grid-template-columns: 70px 1fr; gap: 10px; padding-bottom: 12px; }
 
