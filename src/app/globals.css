@@ -61,6 +61,30 @@
 
 html { scroll-behavior: smooth; }
 
+/* Scrollbar globale : fine, rectangulaire, assortie au thème clair */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(17, 17, 17, 0.28) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.25);
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(17, 17, 17, 0.45);
+}
+
 body {
   background-color: var(--bg);
   background-image: var(--bg-image);
@@ -963,7 +987,28 @@ img {
   overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: safe center;
+  justify-content: center;
+  /* Scrollbar fine et rectangulaire (Firefox) */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(237, 233, 226, 0.28) transparent;
+}
+
+/* Scrollbar fine et rectangulaire (Chrome, Edge, Safari) */
+.about-pin__panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.about-pin__panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.about-pin__panel::-webkit-scrollbar-thumb {
+  background: rgba(237, 233, 226, 0.28);
+  border-radius: 0;
+}
+
+.about-pin__panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(237, 233, 226, 0.5);
 }
 
 .about-pin__lead {
@@ -1024,7 +1069,7 @@ img {
 .about-pin__stack {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
 }
 
 .about-pin__stack ul { list-style: none; margin: 0; padding: 0; }
@@ -1032,9 +1077,9 @@ img {
 /* Titres de catégorie : plus grands et bien visibles */
 .about-pin__stack > li > span {
   display: block;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
   color: #ede9e2;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 650;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -1053,27 +1098,27 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
 }
 
 .about-pin__chip {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  padding: 5px 10px;
+  padding: 6px 11px;
   border-radius: 9px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(237, 233, 226, 0.16);
   color: #ede9e2;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: -0.01em;
   transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 .about-pin__chip svg {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   flex: none;
   color: rgba(237, 233, 226, 0.92);
 }
@@ -1612,6 +1657,44 @@ img {
   gap: clamp(20px, 3vw, 48px);
 }
 
+/* Chips "Stack" : icône + nom, thème clair */
+.project-article__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: 9px;
+  background: rgba(17, 17, 17, 0.045);
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  color: #222;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.skill-chip svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.skill-chip:hover {
+  background: rgba(17, 17, 17, 0.08);
+  border-color: rgba(17, 17, 17, 0.28);
+  transform: translateY(-1px);
+}
+
 .project-article__side {
   position: sticky;
   top: 88px;
@@ -1721,6 +1804,24 @@ img {
   grid-column: 1;
 }
 
+.writing-article-links {
+  position: sticky;
+  top: 88px;
+  z-index: 45;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  align-self: start;
+  height: fit-content;
+  grid-column: 3;
+}
+
+.writing-article-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .writing-article-layout > article {
   grid-column: 2;
 }
@@ -1754,8 +1855,17 @@ img {
   }
 
   .writing-article-back,
+  .writing-article-links,
   .writing-article-layout > article {
     grid-column: 1;
+  }
+
+  .writing-article-links {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 16px;
   }
 
   .writing-article-layout > article {

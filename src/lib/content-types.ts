@@ -38,6 +38,17 @@ export type Project = {
 };
 
 export type BlogSection = { heading?: LocalizedText; body: LocalizedText; image?: string };
-export type BlogPost = { slug: string; title: LocalizedText; shortDescription: LocalizedText; coverImage: string; category: LocalizedText; date: LocalizedText; readTime: LocalizedText; sections: BlogSection[] };
+export type BlogPost = {
+  slug: string;
+  title: LocalizedText;
+  shortDescription: LocalizedText;
+  coverImage: string;
+  category: LocalizedText;
+  date: LocalizedText;
+  readTime: LocalizedText;
+  sections: BlogSection[];
+  demoUrl?: string;
+  githubUrl?: string;
+};
 export type ContentCollection = "certifications" | "projects" | "blog-posts" | "blog-categories";
 export type ContentStore = { certifications: Certification[]; projects: Project[]; "blog-posts": BlogPost[]; "blog-categories": LocalizedText[] };

@@ -1,5 +1,84 @@
 [
   {
+    "slug": "open-agent-hackathon-archus-2026",
+    "title": {
+      "fr": "Open Agent Hackathon 2026 : construire Archus en binôme",
+      "en": "Open Agent Hackathon 2026: Building Archus as a duo"
+    },
+    "shortDescription": {
+      "fr": "Retour sur ma participation au hackathon GenAI Works : six jours pour construire Archus, un agent capable d’expliquer pourquoi maintenir, refactoriser ou migrer un module legacy.",
+      "en": "A look back at my GenAI Works hackathon: six days building Archus, an agent that can explain whether to maintain, refactor, or migrate a legacy module."
+    },
+    "coverImage": "/content/blog/hack-gen-archus-2026-cover.jpg",
+    "category": {
+      "fr": "Hackathon",
+      "en": "Hackathon"
+    },
+    "date": {
+      "fr": "2 nov. 2026",
+      "en": "Nov 2, 2026"
+    },
+    "readTime": {
+      "fr": "5 min",
+      "en": "5 min"
+    },
+    "demoUrl": "https://youtu.be/G2GBZCUFznY",
+    "githubUrl": "https://github.com/HE11032006/Archus",
+    "sections": [
+      {
+        "heading": {
+          "fr": "Un hackathon pour des agents qui font du vrai travail",
+          "en": "A hackathon for agents that do real work"
+        },
+        "body": {
+          "fr": "Fin octobre 2026, j’ai participé à l’Open Agent Hackathon organisé par GenAI Works. Format 100 % en ligne, environ 144 heures, et une idée claire : ne pas sortir un chatbot de plus, mais un agent utile, branché sur de vraies données, capable de raisonner et surtout d’assumer ses réponses. J’ai fait le parcours en binôme. On a choisi la track The Agent That Can Explain Why, parce que le « pourquoi » m’intéresse autant que le résultat final.",
+          "en": "In late October 2026, I took part in the Open Agent Hackathon hosted by GenAI Works. Fully online, roughly 144 hours, and a clear brief: not another chatbot, but a useful agent grounded in real data, able to reason and stand behind its answers. I entered as a duo. We picked the track The Agent That Can Explain Why, because the “why” matters to me as much as the final decision."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Archus : maintenir, refactoriser ou migrer ?",
+          "en": "Archus: maintain, refactor, or migrate?"
+        },
+        "body": {
+          "fr": "Archus répond à une question que se posent souvent les tech leads sur du code legacy : est-ce qu’on maintient ce module, on le refactorise, ou on le migre ? L’idée n’était pas de laisser un modèle « sentir » la réponse. Archus s’appuie sur des métriques de code, les interroge en SQL, score les trois options, puis essaie de vérifier chaque chiffre avant d’écrire une conclusion. S’il n’y a pas assez de preuves, il le dit clairement plutôt que d’inventer une confiance artificielle.",
+          "en": "Archus answers a question tech leads often face on legacy code: should this module be maintained, refactored, or migrated? The point was not to let a model “feel” the answer. Archus starts from code metrics, queries them with SQL, scores the three options, then tries to verify every number before writing a conclusion. If the evidence is not there, it says so instead of inventing artificial confidence."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Zetaris et Meterless dans la boucle",
+          "en": "Zetaris and Meterless in the loop"
+        },
+        "body": {
+          "fr": "Pendant le hackathon, on a utilisé la stack sponsor : Zetaris pour brancher l’agent sur des données et Meterless comme runtime côté agents, mémoire et exécution. Ce n’était pas juste pour cocher une case. Zetaris nous a aidés à traiter les métriques comme une source interrogeable. Meterless, lui, a servi de base pour faire tourner le runtime multi-agents et garder un état partagé entre les étapes. Sans ça, Archus serait resté un prompt long avec une belle démo. Avec ça, on a pu construire une boucle où planifier, interroger, scorer et vérifier sont des rôles séparés.",
+          "en": "During the hackathon we used the sponsor stack: Zetaris to connect the agent to data, and Meterless as the runtime for agents, memory, and execution. That was not just for a checkbox. Zetaris helped us treat metrics as something you can query. Meterless gave us a base to run the multi-agent loop and keep shared state across steps. Without that, Archus would have stayed a long prompt with a nice demo. With it, we could build a loop where planning, querying, scoring, and verifying are separate jobs."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Ce que le binôme m’a appris",
+          "en": "What building as a duo taught me"
+        },
+        "body": {
+          "fr": "Travailler à deux sur un hackathon aussi dense force à trancher vite : quelle track, quelle démo, quel niveau de polish. On a aussi appris à séparer les responsabilités dans l’agent lui-même. Celui qui formule une affirmation n’est pas forcément celui qui la vérifie. Ça paraît simple dit comme ça, mais c’est exactement ce qui manque à beaucoup de systèmes GenAI trop sûrs d’eux. La vidéo de démo et le dépôt GitHub sont là pour montrer le résultat brut, pas une version marketing.",
+          "en": "Building as a duo on a dense hackathon forces fast decisions: which track, which demo, how much polish. We also learned to separate responsibilities inside the agent itself. The agent that writes a claim is not the one that checks it. That sounds simple, but it is exactly what many overconfident GenAI systems are missing. The demo video and the GitHub repo are there to show the raw result, not a marketing version."
+        }
+      },
+      {
+        "heading": {
+          "fr": "Ce que je retiens",
+          "en": "What I take away"
+        },
+        "body": {
+          "fr": "Je repars avec un certificat de participation (CERT-2026-UPXVL), un projet concret, et surtout une conviction renforcée : un agent utile, ce n’est pas seulement une réponse fluide. C’est une décision, des preuves, et la capacité de dire « je ne sais pas assez » quand les données ne suivent pas. Archus n’est pas fini. Mais pour un sprint de quelques jours, c’était exactement le genre de problème que je voulais attaquer.",
+          "en": "I leave with a participation certificate (CERT-2026-UPXVL), a concrete project, and a stronger conviction: a useful agent is not just a fluent answer. It is a decision, evidence, and the ability to say “I do not know enough” when the data is not there. Archus is not finished. But for a few-day sprint, it was exactly the kind of problem I wanted to take on."
+        },
+        "image": "/content/blog/hack-gen-open-agent-2026-certificate.png"
+      }
+    ]
+  },
+  {
     "slug": "indaba-x-benin-2026",
     "title": {
       "fr": "IndabaX Bénin 2026 : une immersion dans la communauté IA",
