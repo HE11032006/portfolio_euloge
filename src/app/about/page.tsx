@@ -16,9 +16,9 @@ export default function AboutPage() {
             <img src="/HE.jpg" alt="HOUESSOU Euloge" />
           </div>
           <h1 className="about-hero__title type-display">
-            <ShutterTitle text={t.about.greeting} />
+            <span className="about-hero__line"><ShutterTitle text={t.about.greeting} /></span>
             <br />
-            <ShutterTitle text="Euloge" />
+            <span className="about-hero__line"><ShutterTitle text={t.about.name} /></span>
           </h1>
         </div>
       </div>
