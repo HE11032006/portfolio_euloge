@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import Link from "next/link";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-import { ArrowUpRight, Bot, ChartBar, CodeXml, Database, SearchCode, Sparkles, Workflow } from "lucide-react";
+import { ArrowUpRight, Bot, Box, ChartBar, CodeXml, Cloud, Database, SearchCode, Sparkles, Workflow } from "lucide-react";
 import {
-  SiAndroidstudio, SiDocker, SiElectron, SiFastapi, SiFlutter, SiGit, SiGithub, SiGithubactions,
-  SiHuggingface, SiJupyter, SiLangchain, SiLunacy, SiNumpy, SiOpencv, SiOpencode, SiPandas,
-  SiPostgresql, SiPython, SiScikitlearn, SiSqlite, SiSupabase, SiTypescript, SiVuedotjs, SiNextdotjs,
+  SiAndroidstudio, SiCloudflareworkers, SiDocker, SiElectron, SiFastapi, SiFlutter, SiGit, SiGithub,
+  SiGithubactions, SiHuggingface, SiJupyter, SiLangchain, SiLunacy, SiMysql, SiNumpy,
+  SiOnnx, SiOpencv, SiOpencode, SiPandas, SiPostgresql, SiPython, SiRust,
+  SiScikitlearn, SiShell, SiSqlite, SiSupabase, SiTypescript, SiVuedotjs, SiNextdotjs, SiYaml,
 } from "react-icons/si";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import { useLocale } from "@/components/locale-provider";
@@ -16,60 +17,48 @@ const EXPAND_END = 0.18;
 
 const STACK_GROUPS = [
   {
-    id: "data", fr: "Data engineering", en: "Data engineering",
+    id: "data", fr: "Ingénierie des données", en: "Data Engineering",
     items: [
-      { fr: "Python", en: "Python", icon: SiPython },
-      { fr: "ELT / ETL", en: "ELT / ETL", icon: Workflow },
+      { fr: "ETL / ELT", en: "ETL / ELT", icon: Workflow },
       { fr: "Modélisation de données", en: "Data modeling", icon: Database },
-      { fr: "FastAPI", en: "FastAPI", icon: SiFastapi },
     ],
   },
   {
-    id: "ia", fr: "IA & Machine Learning", en: "AI & Machine Learning",
+    id: "database", fr: "Bases de données et stockage", en: "Databases & Storage",
     items: [
-      { fr: "Recherche sémantique & RAG", en: "Semantic search & RAG", icon: SiLangchain },
-      { fr: "Traitement du langage naturel (NLP)", en: "Natural language processing (NLP)", icon: SiHuggingface },
-      { fr: "Classification d’images", en: "Image classification", icon: SiOpencv },
-      { fr: "Pandas", en: "Pandas", icon: SiPandas },
-      { fr: "NumPy", en: "NumPy", icon: SiNumpy },
-      { fr: "scikit-learn", en: "scikit-learn", icon: SiScikitlearn },
-      { fr: "Seaborn", en: "Seaborn", icon: ChartBar },
+      { fr: "PostgreSQL", en: "PostgreSQL", icon: SiPostgresql },
+      { fr: "MySQL", en: "MySQL", icon: SiMysql },
+      { fr: "Supabase", en: "Supabase", icon: SiSupabase },
+    ],
+  },
+  {
+    id: "ia", fr: "Science des données & IA", en: "Data Science & AI",
+    items: [
+      { fr: "Python (Pandas, NumPy, scikit-learn, matplotlib)", en: "Python (Pandas, NumPy, scikit-learn, matplotlib)", icon: SiPython },
+      { fr: "RAG", en: "RAG", icon: SiLangchain },
+      { fr: "LLM", en: "LLM", icon: SiHuggingface },
       { fr: "Statistiques descriptives", en: "Descriptive statistics", icon: SiPython },
     ],
   },
   {
-    id: "cloud", fr: "Cloud & Bases de données", en: "Cloud & Databases",
+    id: "env", fr: "Environnement & CI/CD", en: "Environment & CI/CD",
     items: [
-      { fr: "AWS Bedrock", en: "AWS Bedrock", icon: Sparkles },
-      { fr: "PostgreSQL", en: "PostgreSQL", icon: SiPostgresql },
-      { fr: "Supabase", en: "Supabase", icon: SiSupabase },
-      { fr: "SQLite", en: "SQLite", icon: SiSqlite },
-      { fr: "Docker", en: "Docker", icon: SiDocker },
+      { fr: "GitHub Actions", en: "GitHub Actions", icon: SiGithubactions },
+      { fr: "Git", en: "Git", icon: SiGit },
+      { fr: "Jupyter", en: "Jupyter", icon: SiJupyter },
     ],
   },
   {
     id: "fullstack", fr: "Développement Fullstack", en: "Fullstack Development",
     items: [
-      { fr: "TypeScript", en: "TypeScript", icon: SiTypescript },
-      { fr: "Next.js", en: "Next.js", icon: SiNextdotjs },
-      { fr: "Vue.js", en: "Vue.js", icon: SiVuedotjs },
-      { fr: "Flutter", en: "Flutter", icon: SiFlutter },
-      { fr: "Electron", en: "Electron", icon: SiElectron },
-      { fr: "Git", en: "Git", icon: SiGit },
-      { fr: "GitHub Actions", en: "GitHub Actions", icon: SiGithubactions },
-      { fr: "CI/CD", en: "CI/CD", icon: SiGithub },
-      { fr: "Analyse statique", en: "Static analysis", icon: SearchCode },
-    ],
-  },
-  {
-    id: "outils", fr: "Outils", en: "Tools",
-    items: [
-      { fr: "VS Code", en: "VS Code", icon: CodeXml },
-      { fr: "Android Studio", en: "Android Studio", icon: SiAndroidstudio },
-      { fr: "Jupyter Notebook", en: "Jupyter Notebook", icon: SiJupyter },
-      { fr: "OpenCode", en: "OpenCode", icon: SiOpencode },
-      { fr: "Manus AI", en: "Manus AI", icon: Bot },
-      { fr: "Lunacy", en: "Lunacy", icon: SiLunacy },
+      { fr: "Flutter (Dart)", en: "Flutter (Dart)", icon: SiFlutter },
+      { fr: "TypeScript (React, Next.js, Vue.js)", en: "TypeScript (React, Next.js, Vue.js)", icon: SiTypescript },
+      { fr: "Tauri", en: "Tauri", icon: Box },
+      { fr: "FastAPI", en: "FastAPI", icon: SiFastapi },
+      { fr: "API REST", en: "API REST", icon: SearchCode },
+      { fr: "Supabase", en: "Supabase", icon: SiSupabase },
+      { fr: "Cloudflare Workers", en: "Cloudflare Workers", icon: SiCloudflareworkers },
+      { fr: "Docker", en: "Docker", icon: SiDocker },
     ],
   },
 ] as const;
