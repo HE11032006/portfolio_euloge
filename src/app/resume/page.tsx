@@ -9,7 +9,7 @@ import { useLocale } from "@/components/locale-provider";
 import type { Locale } from "@/lib/i18n-core";
 
 const cvFiles: Record<Locale, { href: string; fileName: string }> = {
-  fr: { href: "/euloge_cv.pdf", fileName: "euloge_cv.pdf" },
+  fr: { href: "/euloge_.cv.pdf", fileName: "euloge_.cv.pdf" },
   en: { href: "/english_euloge_cv.pdf", fileName: "english_euloge_cv.pdf" },
 };
 
